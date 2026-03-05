@@ -1,0 +1,33 @@
+/*================== weblink ===================================*/
+/* Roboto font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* icon */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/*====================== main import ===========================*/
+@import url(variable.css);
+
+/* ================== custom import ============================*/
+
+/* Common CSS */
+@import url(../css/commonCss/header.css);
+@import url(../css/commonCss/footer.css);
+@import url(../css/commonCss/pagination.css);
+
+/* Home CSS */
+@import url(./home/slider.css);
+@import url(./home/counter.css);
+@import url(./home/chaiman.css);
+@import url(./home/buyers.css);
+@import url(./home/about.css);
+@import url(./home/galary.css);
+@import url(./home/subcription.css);
+
+/* Galary Page */
+@import url(./galaryPage/galaryPage.css);
+
+/* Contact Page */
+@import url(./contactUs/contact.css);
+
+/* Track Recourd Page */
+@import url(./trackRecord/trackRecord.css);

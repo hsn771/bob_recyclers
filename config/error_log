@@ -1,0 +1,20 @@
+[10-May-2024 12:52:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home3/shariful/public_html/msrlbob/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home3/shariful/public_html/msrlbob/config/database.php on line 18
+[25-Jun-2024 15:22:24 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home3/shariful/public_html/msrlbob/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home3/shariful/public_html/msrlbob/config/database.php on line 18
+[25-Jun-2024 15:22:27 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home3/shariful/public_html/msrlbob/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home3/shariful/public_html/msrlbob/config/database.php on line 18
+[25-Jun-2024 20:38:45 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home3/shariful/public_html/msrlbob/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home3/shariful/public_html/msrlbob/config/database.php on line 18
+[25-Jun-2024 20:38:48 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home3/shariful/public_html/msrlbob/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home3/shariful/public_html/msrlbob/config/database.php on line 18

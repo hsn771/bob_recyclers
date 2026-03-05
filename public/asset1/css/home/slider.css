@@ -1,0 +1,78 @@
+.slider-one-heading {
+  font-weight: 200;
+  font-size: 30px;
+}
+.slider-two-heading {
+  font-weight: 900;
+  font-size: 40px;
+}
+.slider-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+/* Carousel */
+.carousel-item {
+  position: relative;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: auto !important;
+  bottom: 10px !important;
+  left: 50px !important;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-left: 0 !important;
+}
+
+.carousel-indicators li {
+  position: relative !important;
+  margin-right: 5px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: white;
+  opacity: 0.5;
+  transition: background-color 0.5s ease;
+}
+
+.carousel-indicators li.active {
+  background-color: var(--brand-color) !important;
+  opacity: 1;
+}
+.btn-green {
+  background-color: var(--secondary-color) !important;
+  color: white !important;
+}
+.btn-white {
+  background-color: white !important;
+  color: var(--secondary-color) !important;
+}
+.carousel-caption {
+  width: 50% !important;
+}
+#slider-zindex {
+  z-index: 2;
+}
+@media only screen and (max-width: 800px) {
+  .carousel-caption {
+    width: 100% !important;
+  }
+}

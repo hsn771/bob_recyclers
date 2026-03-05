@@ -1,0 +1,43 @@
+.conact-page-top {
+  background-image: url(../../images/office.jpg);
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.conact-page-top .overlay {
+  background-color: #000000ad;
+  height: 300px;
+}
+.conact-page-top p {
+  font-size: 80px;
+  color: #fff;
+  font-weight: 900;
+}
+.conact-page-top p span {
+  font-size: 150px;
+}
+.contact-body i,
+.contact-body span {
+  font-size: 15px;
+}
+.contact-body p {
+  font-size: 18px;
+  font-weight: 900;
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 5px;
+}
+.contact-form p {
+  font-size: 25px;
+  color: var(--secondary-color);
+  font-weight: 900;
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 5px;
+}
+.contact-form label {
+  font-size: 13px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+.contact-form input {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

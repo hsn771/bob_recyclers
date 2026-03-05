@@ -1,0 +1,31 @@
+.counter-title {
+  font-weight: 900;
+  font-size: 30px;
+}
+.counter-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+.screw {
+  margin-right: -190px;
+  padding-top: 53px;
+}
+.counter h3 {
+  font-size: 48px;
+  font-weight: 500;
+}
+.counter p {
+  font-size: 16px;
+  font-weight: 300;
+}
+.middle-bg {
+  background-image: url(../../images/screw.png);
+  background-repeat: no-repeat;
+  background-position: right -80px top 60px;
+  background-size: 600px;
+}
+@media only screen and (max-width: 800px) {
+  .middle-bg {
+    background-image: none;
+  }
+}

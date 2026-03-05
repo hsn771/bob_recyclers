@@ -1,0 +1,42 @@
+.management-page-top {
+  background-image: url(../../images/history.png);
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.management-page-top .overlay {
+  background-color: #000000ad;
+  height: 300px;
+}
+.management-page-top p {
+  font-size: 80px;
+  color: #fff;
+  font-weight: 900;
+}
+.management-page-top p span {
+  font-size: 150px;
+}
+.management-div {
+  position: relative;
+}
+.management-title {
+  background-color: #003f34d5;
+  width: 350px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  /* position: absolute;
+  bottom: 10px;
+  right: 0; */
+}
+.management-title h5 {
+  color: #fff;
+  font-weight: 900;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+.management-title p {
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}

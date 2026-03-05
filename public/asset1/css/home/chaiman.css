@@ -1,0 +1,42 @@
+.chairman {
+  margin-top: -40px;
+}
+.unknown-btn {
+  color: var(--secondary-color) !important;
+  font-weight: 300;
+  font-size: 15px;
+}
+.chairman-title {
+  font-weight: 600;
+  font-size: 40px;
+}
+.chairman-text {
+  font-weight: 300;
+  font-size: 15px;
+}
+.chairman-image {
+  position: relative;
+}
+.designation {
+  background-color: #0d392edc;
+  position: absolute;
+  bottom: 40px;
+  right: -40px;
+}
+.designation h5 {
+  font-weight: 700;
+  font-size: 25px;
+  border-bottom: 2px solid #fff !important;
+  width: 30%;
+  white-space: nowrap;
+}
+.designation p {
+  font-weight: 200;
+  font-size: 20px;
+}
+@media only screen and (max-width: 375px) {
+  .designation {
+    bottom: 40px;
+    right: 0;
+  }
+}

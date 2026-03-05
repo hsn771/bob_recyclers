@@ -1,0 +1,32 @@
+.sister-logo-about img {
+  width: 150px;
+}
+.experience {
+  position: relative;
+}
+.top-exprience {
+  position: absolute;
+  top: 60px;
+  right: -150px;
+}
+.top-exprience p {
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 45px;
+}
+
+.mission-visition h5 {
+  font-weight: 800;
+  font-size: 25px;
+  margin-top: 180px;
+}
+.history p,
+.mission-visition p {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: justify;
+}
+.history h5 {
+  font-weight: 800;
+  font-size: 25px;
+}

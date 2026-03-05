@@ -1,0 +1,17 @@
+.subcribe h4 {
+  font-weight: 800;
+  font-size: 20px;
+}
+.btn-subcrib {
+  background-color: white;
+  color: var(--secondary-color) !important;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+.subcribe input::placeholder {
+  font-size: 13px;
+  color: var(--brand-color);
+}
+.subcribe-bg {
+  background-color: var(--secondary-color);
+}

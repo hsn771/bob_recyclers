@@ -1,0 +1,43 @@
+@import url(./import.css);
+
+/* reset css */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* root css */
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+.brand-bg {
+  background-color: var(--backgroud-brand);
+}
+
+.brand-text-color {
+  color: var(--secondary-color);
+}
+
+.project-btn {
+  color: #fff;
+  padding: 5px 30px;
+  border-radius: 20px;
+  font-weight: 300;
+  background-color: var(--secondary-color);
+}
+.cursor-point {
+  cursor: pointer !important;
+}
+.border-1-white {
+  border: 1px solid #fff;
+}
+
+/* ============================ */

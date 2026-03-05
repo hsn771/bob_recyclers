@@ -1,0 +1,13 @@
+.buyers h3 {
+  font-weight: 500;
+  font-size: 40px;
+}
+.buyers p {
+  font-weight: 300;
+  font-size: 15px;
+}
+.buyers-logo img {
+  height: 45px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
