@@ -89,7 +89,7 @@
 <!-- Hero -->
 <section class="blog-hero">
     <div class="container">
-        <h1 class="mb-2">Our Blog</h1>
+        <h1 class="mb-2"><span>B</span>logs</h1>
         <p class="mb-0 opacity-75">Latest news, updates, and insights from MSRL Bob Recyclers</p>
     </div>
 </section>
