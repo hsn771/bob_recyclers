@@ -50,11 +50,12 @@
         'Our Team' => 'management',
         'Images' => 'gallery',
         'Video' => 'videos',
+        'Blog' => 'blog',
         'Contact Us' => 'contact',
         'Career' => 'career',
         'Chairman Message' => 'chairman',
     );
-                                    ?>
+                                            ?>
 
 
                     <!-- table bordered -->
@@ -168,39 +169,39 @@
                                                         <td><?= $nl['href'];?></td>
                                                         <td>
                                                             <?php    if ($nl['status'] == 1) { ?>
-                                                            <a href="#"
-                                                                onclick="return confirm('Do you want to inactive this menu')"
-                                                                class="label label-success">Active</a>
+                                                            <a href="{{route('front_menu.toggle', $nl->id)}}"
+                                                                onclick="return confirm('Do you want to deactivate this menu?')"
+                                                                class="badge bg-success text-white">Active</a>
                                                             <?php    } else { ?>
-                                                            <a href="#"
-                                                                onclick="return confirm('Do you want to active this menu')"
-                                                                class="label label-danger">Inactive</a>
+                                                            <a href="{{route('front_menu.toggle', $nl->id)}}"
+                                                                onclick="return confirm('Do you want to activate this menu?')"
+                                                                class="badge bg-danger text-white">Inactive</a>
                                                             <?php    } ?>
                                                         </td>
                                                         <td>
                                                             <a href="">
-                                                                    <i class="bi bi-eye-fill"></i>
-                                                                </a>&nbsp;
-                                                                <button class="btn btn-link btn-sm" type="button"
-                                                                    onclick="edit('{{$nl->id}}','<?= explode('/', $nl->href)[0];?>')">
-                                                                    <i class="bi bi-pencil-square"></i>
-                                                                </button> &nbsp;
-                                                                <a href="{{route('front_menu.detroy', $nl->id)}}"
-                                                                    onclick="return confirm('Are you sure to delete this?')">
-                                                                    <i class="bi bi-trash"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <?php    $i++;
+                                                                <i class="bi bi-eye-fill"></i>
+                                                            </a>&nbsp;
+                                                            <button class="btn btn-link btn-sm" type="button"
+                                                                onclick="edit('{{$nl->id}}','<?= explode('/', $nl->href)[0];?>')">
+                                                                <i class="bi bi-pencil-square"></i>
+                                                            </button> &nbsp;
+                                                            <a href="{{route('front_menu.detroy', $nl->id)}}"
+                                                                onclick="return confirm('Are you sure to delete this?')">
+                                                                <i class="bi bi-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php    $i++;
     } ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <?php
+                            </div>
+                            <div class="col-md-6">
+                                <?php
 
     /* Function menu_showNested
      * @desc Create inifinity loop for nested list from database
@@ -258,15 +259,15 @@
     echo "</div>\n\n";
 
 
-                                                ?>
-                                </div>
+                                                        ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Bordered table end -->
+        </div>
+    </section>
+    <!-- Bordered table end -->
 
 
 @endsection

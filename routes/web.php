@@ -33,6 +33,7 @@ use App\Http\Controllers\PageController as page;
 use App\Http\Controllers\CareerController as career;
 use App\Http\Controllers\CircularController as circular;
 use App\Http\Controllers\HomeController as home;
+use App\Http\Controllers\Admin\BlogController as blog;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,7 @@ Route::get('front_menu', [frontMenu::class, 'index'])->name('front_menu.index');
 Route::post('menu_save_update/{id?}', [frontMenu::class, 'save_update'])->name('front_menu.save');
 Route::get('front_menu/mss', [frontMenu::class, 'mss'])->name('front_menu.mss');
 Route::get('front_menu/delete/{id}', [frontMenu::class, 'destroy'])->name('front_menu.detroy');
+Route::get('front_menu/toggle/{id}', [frontMenu::class, 'toggleStatus'])->name('front_menu.toggle');
 Route::get('/page/{slug}', [home::class,'page'])->name('front.page');
 
 Route::get('career', [home::class, 'career'])->name('career');
@@ -74,6 +76,10 @@ Route::get('gallery', [ship::class, 'gallery'])->name('gallery');
 Route::get('gallery/filter/{category}', [ship::class, 'filter'])->name('frontend.gallery.filter');
 // Route::get('/home', [home::class, 'index'])->name('home');
 Route::get('/', [home::class, 'index'])->name('home');
+
+// Blog frontend routes
+Route::get('blog', [home::class, 'blog'])->name('blog.index');
+Route::get('blog/{slug}', [home::class, 'blogShow'])->name('blog.show');
 
 Route::middleware(['checkauth'])->prefix('admin')->group(function(){
     Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
@@ -105,6 +111,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('project', project::class);
     Route::resource('circular', circular::class);
     Route::resource('video', video::class);
+    Route::resource('admin/blog', blog::class, ['as' => 'admin']);
     
     Route::delete('applicants/{id}', [career::class, 'destroy'])->name('applicants.destroy');
     Route::delete('contact/{id}', [contact::class, 'destroy'])->name('contact.destroy');

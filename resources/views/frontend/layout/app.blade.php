@@ -20,7 +20,7 @@
 
     <!-- Go To Top Button -->
     <div id="goToTop" class="go-to-top">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up-long"></i>
         <span>Go To Top</span>
     </div>
 
@@ -35,7 +35,7 @@
             gap: 10px;
             cursor: pointer;
             z-index: 9999;
-            color: #1f2933;
+            color: #224e3cff;
             font-weight: 600;
             font-size: 14px;
             transition: all 0.4s ease;
@@ -53,6 +53,8 @@
         .go-to-top i {
             font-size: 24px;
             transition: transform 0.3s ease;
+            transform: scaleX(0.6);
+            /* slim look */
         }
 
         .go-to-top span {
@@ -66,7 +68,7 @@
         }
 
         .go-to-top:hover i {
-            transform: translateY(-5px);
+            transform: scaleY(2.4) translateY(-5px);
         }
     </style>
 

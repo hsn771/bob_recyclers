@@ -196,7 +196,7 @@
   <nav class="navbar navbar-expand-sm navbar-white dektop-nav" style="background-color: var(--brand-color);">
     <div class="container p-0">
       @php
-        $menus = App\Models\FrontMenu::where('parent_id', 0)->orderBy('rank')->get();
+        $menus = App\Models\FrontMenu::where('parent_id', 0)->where('status', 1)->orderBy('rank')->get();
       @endphp
       @foreach($menus as $menu)
         <ul class="navbar-nav ms-0">

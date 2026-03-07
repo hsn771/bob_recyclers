@@ -52,6 +52,19 @@ class FrontMenuController extends Controller
             return back()->withInput();
         }
     }
+    /* toggle menu status */
+    function toggleStatus(Request $request, $id)
+    {
+        $data = FrontMenu::find($id);
+        if ($data) {
+            $data->status = $data->status == 1 ? 0 : 1;
+            $data->save();
+            $msg = $data->status == 1 ? 'Menu activated successfully!' : 'Menu deactivated successfully!';
+            $this->notice->success($msg);
+        }
+        return back();
+    }
+
     /* delete menu */
     function destroy(Request $request){
         $data=FrontMenu::find($request->id);

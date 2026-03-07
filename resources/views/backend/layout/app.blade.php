@@ -257,6 +257,13 @@
                         </li>
 
                         <li class="sidebar-item  ">
+                            <a href="{{ route('admin.blog.index') }}" class='sidebar-link'>
+                                <i class="bi bi-journal-richtext"></i>
+                                <span>Blog</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  ">
                             <a href="{{route('contactList')}}" class='sidebar-link'>
                                 <i class="bi bi-telephone"></i>
                                 <span>Contacts</span>

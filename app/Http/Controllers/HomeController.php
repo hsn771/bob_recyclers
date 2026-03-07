@@ -28,6 +28,7 @@ use App\Models\Carousel;
 use App\Models\Project;
 use App\Models\FrontMenu;
 use App\Models\SisterConcern;
+use App\Models\Blog;
 use Exception;
 use Toastr;
 
@@ -163,6 +164,23 @@ class HomeController extends Controller
         return view('frontend.gallery.video', compact('videos','info','sister'));
     }
 
+    public function blog()
+    {
+        $info = CompanyInfo::first();
+        $sister = SisterLogo::all();
+        $blogs = Blog::where('status', 1)->latest('published_at')->paginate(9);
+        return view('frontend.blog.index', compact('info', 'sister', 'blogs'));
+    }
+
+    public function blogShow($slug)
+    {
+        $info = CompanyInfo::first();
+        $sister = SisterLogo::all();
+        $blog = Blog::where('slug', $slug)->where('status', 1)->firstOrFail();
+        return view('frontend.blog.show', compact('info', 'sister', 'blog'));
+    }
+
 }
+
 
 
