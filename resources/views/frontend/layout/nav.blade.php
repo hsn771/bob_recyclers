@@ -3,7 +3,7 @@
   @push('styles')
     <style>
       .top-header-premium {
-        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--brand-color) 100%);
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #91C263 100%);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 6px 0;
         min-height: 40px;
@@ -11,7 +11,7 @@
 
       /* Main navbar green background with white text */
       .dektop-nav {
-        background-color: var(--brand-color) !important;
+        background-color: #91C263 !important;
       }
 
       .dektop-nav .nav-link {

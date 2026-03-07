@@ -1,6 +1,6 @@
 <style>
   .footer-corporate {
-    background: #1f2933;
+    background: #224e3c;
     font-size: 14px;
   }
 
@@ -91,14 +91,14 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px 0;
     font-size: 13px;
-    background-color: #1a2229;
+    background-color: #132c22;
     text-align: center;
   }
 
   @media (min-width: 768px) {
     .footer-bottom {
       padding: 10px 0;
-      background-color: #3fc49c78;
+      background-color: #132c22;
       text-align: left;
     }
   }

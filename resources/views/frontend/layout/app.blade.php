@@ -35,7 +35,7 @@
             gap: 10px;
             cursor: pointer;
             z-index: 9999;
-            color: #224e3cff;
+            color: #0d1612ff;
             font-weight: 600;
             font-size: 14px;
             transition: all 0.4s ease;
