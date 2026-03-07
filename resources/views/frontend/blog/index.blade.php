@@ -90,7 +90,7 @@
 <section class="blog-hero">
     <div class="container">
         <h1 class="mb-2"><span>B</span>logs</h1>
-        <p class="mb-0 opacity-75">Latest news, updates, and insights from MSRL Bob Recyclers</p>
+        <p class="mb-0 opacity-75">Latest news, updates, and insights from Bay of Bengal Recyclers</p>
     </div>
 </section>
 

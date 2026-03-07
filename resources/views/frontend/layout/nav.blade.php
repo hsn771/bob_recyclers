@@ -120,7 +120,7 @@
       }
 
       .sister-logo-box {
-        background: #fff;
+        background: transparent;
         padding: 4px;
         border-radius: 4px;
         display: flex;
@@ -145,6 +145,7 @@
         position: absolute;
         z-index: 200;
         background-color: #fff;
+        /* background-color: transparent; */
         top: 0;
         left: 0;
         /* spans both top-header (~40px) + navbar (~37px) = ~77px total */
@@ -156,6 +157,7 @@
 
         transition: all 0.3s ease;
         padding: 8px 12px;
+        padding-top: 0px !important;
       }
 
       .logo-container-premium img {

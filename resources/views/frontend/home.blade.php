@@ -54,11 +54,11 @@
       <div class="video-overlay">
 
         <h2 class="slider-two-heading text-uppercase d-none d-md-block">
-          BOB Recyclers & Mahinur Ship Recycling Ltd.
+          Bay of Bengal Recyclers
         </h2>
 
         <h4 class="text-uppercase d-block d-md-none">
-          BOB Recyclers & Mahinur Ship Recycling Ltd.
+          Bay of Bengal Recyclers
         </h4>
 
       </div>

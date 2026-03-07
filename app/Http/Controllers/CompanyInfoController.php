@@ -38,11 +38,21 @@ class CompanyInfoController extends Controller
         $info->location=$request->location;
         $info->contact_no=$request->contact_no;
         $info->email_address=$request->email_address;
+        $info->facebook=$request->facebook;
+        $info->twitter=$request->twitter;
+        $info->linkedin=$request->linkedin;
+        $info->youtube=$request->youtube;
           if ($request->hasFile('image')) {
                 $imageName = rand(111, 999) . time() . '.' .
                     $request->image->extension();
                 $request->image->move(public_path('uploads/companyInfo'), $imageName);
                 $info->image = $imageName;
+            }
+          if ($request->hasFile('footer_logo')) {
+                $footerLogoName = 'footer_' . rand(111, 999) . time() . '.' .
+                    $request->footer_logo->extension();
+                $request->footer_logo->move(public_path('uploads/companyInfo'), $footerLogoName);
+                $info->footer_logo = $footerLogoName;
             }
         if( $info->save()){
              $this->notice->success('Successfully saved');
@@ -85,12 +95,22 @@ class CompanyInfoController extends Controller
         $info->location = $request->location;
         $info->contact_no = $request->contact_no;
         $info->email_address = $request->email_address;
+        $info->facebook=$request->facebook;
+        $info->twitter=$request->twitter;
+        $info->linkedin=$request->linkedin;
+        $info->youtube=$request->youtube;
 
         if ($request->hasFile('image')) {
                 $imageName = rand(111, 999) . time() . '.' .
                     $request->image->extension();
                 $request->image->move(public_path('uploads/companyInfo'), $imageName);
                 $info->image = $imageName;
+            }
+        if ($request->hasFile('footer_logo')) {
+                $footerLogoName = 'footer_' . rand(111, 999) . time() . '.' .
+                    $request->footer_logo->extension();
+                $request->footer_logo->move(public_path('uploads/companyInfo'), $footerLogoName);
+                $info->footer_logo = $footerLogoName;
             }
 
         if ($info->save()) {

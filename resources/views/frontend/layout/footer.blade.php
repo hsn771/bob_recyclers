@@ -119,7 +119,11 @@
 
       <!-- Logo -->
       <div class="col-lg-4 col-md-12 mb-3 mb-lg-0 text-center text-lg-start">
-        <img src="{{ asset('uploads/companyInfo/' . $info->image) }}" alt="Footer Logo" class="footer-logo-small">
+        @if($info->footer_logo)
+          <img src="{{ asset('uploads/companyInfo/' . $info->footer_logo) }}" alt="Footer Logo" class="footer-logo-small">
+        @else
+          <img src="{{ asset('uploads/companyInfo/' . $info->image) }}" alt="Footer Logo" class="footer-logo-small">
+        @endif
       </div>
 
       <!-- Contact Info -->
@@ -143,10 +147,18 @@
 
           <!-- Social -->
           <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            @if($info->facebook)
+              <a href="{{ $info->facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            @endif
+            @if($info->twitter)
+              <a href="{{ $info->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
+            @endif
+            @if($info->linkedin)
+              <a href="{{ $info->linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            @endif
+            @if($info->youtube)
+              <a href="{{ $info->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
+            @endif
           </div>
 
         </div>
