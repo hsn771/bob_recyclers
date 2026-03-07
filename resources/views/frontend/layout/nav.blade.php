@@ -144,13 +144,13 @@
       .logo-container-premium {
         position: absolute;
         z-index: 200;
-        background-color: #fff;
-        /* background-color: transparent; */
+        /* background-color: #fff; */
+        background-color: transparent;
         top: 0;
         left: 0;
         /* spans both top-header (~40px) + navbar (~37px) = ~77px total */
-        height: 77px;
-        width: 130px;
+        height: 90px;
+        width: 140px;
         display: flex;
         align-items: center;
         justify-content: center;
