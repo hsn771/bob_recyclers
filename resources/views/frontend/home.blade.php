@@ -8,7 +8,7 @@
     .video-slider {
       position: relative;
       width: 100%;
-      height: 600px;
+      height: 700px;
       overflow: hidden;
     }
 
@@ -28,16 +28,34 @@
       width: 100%;
       text-align: center;
       color: #fff;
+      z-index: 10;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      /* Added for readability since overlay is gone */
     }
 
-    .video-slider::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.35);
+    @media (max-width: 767px) {
+      .video-slider {
+        height: auto;
+      }
+
+      .video-slider video {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .video-overlay {
+        bottom: 20px;
+      }
+
+      .video-overlay h4 {
+        font-size: 1.1rem;
+        padding: 0 10px;
+      }
     }
   </style>
 
