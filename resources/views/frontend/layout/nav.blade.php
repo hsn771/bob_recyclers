@@ -166,9 +166,9 @@
         object-fit: contain;
       }
 
-      .logo-container-premium:hover {
-        box-shadow: 6px 0 20px rgba(0, 0, 0, 0.18), 0 12px 28px rgba(0, 0, 0, 0.14);
-      }
+      /* .logo-container-premium:hover {
+          box-shadow: 6px 0 20px rgba(0, 0, 0, 0.18), 0 12px 28px rgba(0, 0, 0, 0.14);
+        } */
 
       /* Push both header and navbar content past the logo */
       .top-header-premium .container,
