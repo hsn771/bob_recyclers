@@ -121,7 +121,15 @@
 
     <!-- MODAL -->
     <div id="modal" class="modal" onclick="closeModal()">
-      <img id="modalImage" class="modal-content" alt="Modal Image" />
+      <div class="modal-controls">
+        <button onclick="zoomIn(event)" title="Zoom In"><i class="fas fa-search-plus"></i></button>
+        <button onclick="zoomOut(event)" title="Zoom Out"><i class="fas fa-search-minus"></i></button>
+        <button onclick="resetZoom(event)" title="Reset Zoom"><i class="fas fa-sync-alt"></i></button>
+        <button onclick="closeModal(event)" class="close-btn" title="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+        <img id="modalImage" alt="Modal Image" ondragstart="return false;" />
+      </div>
     </div>
 
   </section>
