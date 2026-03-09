@@ -6,10 +6,10 @@
 
     <style>
         /* .management-page-top {
-                            background: url('/frontend/images/banner.jpg') center/cover no-repeat;
-                            height: 250px;
-                            position: relative;
-                        } */
+                                    background: url('/frontend/images/banner.jpg') center/cover no-repeat;
+                                    height: 250px;
+                                    position: relative;
+                                } */
 
         .management-page-top .overlay {
             background: rgba(0, 0, 0, 0.5);
@@ -37,8 +37,46 @@
         }
 
         .designation {
-            background: #000;
+            background: #1a1a1a;
             border-radius: 6px;
+            padding: 20px 25px !important;
+        }
+
+        .designation h5 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #c59d5f;
+            margin-bottom: 5px;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+        }
+
+        .designation p {
+            margin: 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .management-page-top p {
+                font-size: 28px;
+            }
+
+            .chairman-image-col {
+                position: relative;
+                margin-bottom: 40px;
+            }
+
+            .designation {
+                width: 90% !important;
+                position: absolute;
+                bottom: -20px;
+                left: 5%;
+                border-left: 4px solid #c59d5f;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
         }
 
         .chairman-title {
@@ -138,7 +176,7 @@
 
             <div class="row">
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 chairman-image-col">
 
                     @if($chairman && $chairman->image)
 
