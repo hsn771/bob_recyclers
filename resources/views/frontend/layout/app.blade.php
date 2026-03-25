@@ -8,7 +8,7 @@
     <meta name="keywords" content="ship recycling Bangladesh, scrap vessel Chittagong, green shipyard, MSRL, ship breaking Sitakunda">
     <title>MSRL - Green Ship Recycling | Chittagong, Bangladesh</title>
     
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+      <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">

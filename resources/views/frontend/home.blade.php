@@ -144,19 +144,19 @@
 <section class="container py-5">
   <div class="row">
     <div class="col-12">
-      <h2 class="brand-text-color mb-4">About Mahinur Ship Recycling Limited</h2>
+      <h3 class="brand-text-color mb-4">About Mahinur Ship Recycling Limited</h3>
       <p>Mahinur Ship Recycling Limited (MSRL) is one of the leading green ship recycling companies in Bangladesh, located at Middle Sonaichoori, Shitalpur, Sitakunda, Chittagong. Established in 2016, MSRL has successfully recycled over 120 scrap vessels, making it one of the most experienced ship recycling yards in the country.</p>
 
-      <h2 class="brand-text-color mt-4 mb-3">Green and Sustainable Ship Recycling</h2>
+      <h3 class="brand-text-color mt-4 mb-3">Green and Sustainable Ship Recycling</h3>
       <p>At MSRL, we are committed to environmentally responsible ship recycling practices. Our operations strictly follow the Bangladesh Ship Recycling Act 2018 and the Hong Kong International Convention 2009 for Safe and Environmentally Sound Recycling of Ships. We prioritize the safety of our workers and the protection of the environment in every step of our recycling process.</p>
 
-      <h2 class="brand-text-color mt-4 mb-3">Our Ship Recycling Capacity</h2>
+      <h3 class="brand-text-color mt-4 mb-3">Our Ship Recycling Capacity</h3>
       <p>MSRL has an existing cutting capacity of approximately 10 scrap vessels per year, with an average capacity of 10,000 metric tons per ship. After modernization, our capacity will increase to 15,000 metric tons per ship. Together with our sister concern BOB Recyclers, we handle a combined capacity of 20 scrap vessels annually.</p>
 
-      <h2 class="brand-text-color mt-4 mb-3">Why Choose MSRL?</h2>
+      <h3 class="brand-text-color mt-4 mb-3">Why Choose MSRL?</h3>
       <p>With over 8 years of experience in the ship recycling industry, MSRL offers reliable and efficient services to its clients. Our strategic location in Sitakunda, Chittagong provides easy access for beaching of ships and smooth delivery of recycled materials to domestic re-rolling mills. We supply high-quality MS plates and scrap steel to major buyers including BSRM, RSRM, KSRM, AKS, and BS Steel.</p>
 
-      <h2 class="brand-text-color mt-4 mb-3">Ship Recycling in Bangladesh</h2>
+      <h3 class="brand-text-color mt-4 mb-3">Ship Recycling in Bangladesh</h3>
       <p>Bangladesh is one of the world's leading ship recycling nations. The ship recycling yards in Bangladesh are located along an 18 km stretch from Fouzdharhat in the south to Sonaichori in the north, in Sitakunda Upazila of Chittagong district. MSRL is proud to be part of this industry, contributing to the sustainable recycling of end-of-life vessels while supporting Bangladesh's growing steel industry.</p>
     </div>
   </div>
