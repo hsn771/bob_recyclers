@@ -284,17 +284,17 @@
   </div>
 </header>
 
-<section class="brand-bg mobile-nav shadow sticky-top">
+<section class="mobile-nav shadow sticky-top" style="background-color: #91C263;">
   <div class="container py-1">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col">
-        <a href="{{route('home')}}"><img {{-- src="{{asset('asset/images/Mask group.png')}}" --}}
-            src="{{ asset('uploads/companyInfo/' . $info->image) }}" alt="Logo" width="100px" class="img-fluid" /></a>
+        <a href="{{route('home')}}"><img
+            src="{{ asset('uploads/companyInfo/' . $info->image) }}" alt="Logo" style="width: 80px; height: auto;" class="img-fluid" /></a>
       </div>
       <div class="col">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end align-items-center">
           <i class="bi bi-list cursor-point" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></i>
+            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="color: #fff; font-size: 30px; line-height: 1;"></i>
         </div>
       </div>
     </div>
@@ -302,26 +302,26 @@
 
   <!-- Mobile Offcanvas Navigation -->
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style="background-color: #91C263;">
     <div class="offcanvas-header d-flex justify-content-center">
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <ul class="navbar-nav ms-2 mt-2 text-center mobile-nav-view">
       @foreach($menus as $menu)
         <li class="nav-item">
-          <a class="nav-link"
+          <a class="nav-link" style="color: #fff !important; font-weight: 500;"
             href="{{ $menu->href == "#" ? 'javascript:void(0)' : url($menu->href) }}">{{ $menu->name }}</a>
           @if($menu->hasChildren())
-            <ul class="sub-nav">
+            <ul class="sub-nav" style="background-color: rgba(0,0,0,0.15); border-left: 3px solid #fff;">
               @foreach($menu->children as $child)
-                <li><a href="{{ url($child->href) }}">{{ $child->name }}</a></li>
+                <li><a href="{{ url($child->href) }}" style="color: #fff !important;">{{ $child->name }}</a></li>
               @endforeach
             </ul>
           @endif
         </li>
       @endforeach
       <li class="nav-item">
-        <a class="nav-link border m-3 bg-light" href="{{route('gallery')}}">Our All Project</a>
+        <a class="nav-link border m-3" style="color: #fff !important; border-color: rgba(255,255,255,0.5) !important;" href="{{route('gallery')}}">Our All Project</a>
       </li>
     </ul>
   </div>

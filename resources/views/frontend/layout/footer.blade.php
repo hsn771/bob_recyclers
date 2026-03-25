@@ -103,13 +103,31 @@
     }
   }
 
+  /* UPDATED: corporate hover style */
   .footer-bottom a {
     color: #d1d5db;
     text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .footer-bottom a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
   }
 
   .footer-bottom a:hover {
-    color: #fff;
+    color: #ffffff;
+  }
+
+  .footer-bottom a:hover::after {
+    width: 100%;
   }
 </style>
 

@@ -8,7 +8,7 @@
         />
       </div>
       <div class="col-md-12 col-lg-6 about-right brand-text-color ps-3">
-        <h4 class="pt-3 pb-3">About Us</h4>
+        <h4 class="pt-3 pb-3">Who We Are</h4>
         <p>
         {!!$about->about_us_text!!}
         </p>

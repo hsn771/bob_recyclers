@@ -32,10 +32,38 @@
     </div>
 
     <style>
+        body {
+            overflow-x: clip; /* clips horizontal overflow without affecting scroll container */
+        }
+
+        /* ── Custom dark scrollbar ── */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a2e25;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a9e70;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #91C263;
+        }
+
+        /* Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #4a9e70 #1a2e25;
+        }
+
         .go-to-top {
             position: fixed;
             bottom: 60px;
-            right: 40px;
+            right: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -49,6 +77,7 @@
             opacity: 0;
             visibility: hidden;
             user-select: none;
+            max-width: 40px;
         }
 
         .go-to-top.show {
@@ -61,7 +90,6 @@
             font-size: 24px;
             transition: transform 0.3s ease;
             transform: scaleX(0.6);
-            /* slim look */
         }
 
         .go-to-top span {
@@ -76,6 +104,13 @@
 
         .go-to-top:hover i {
             transform: scaleY(2.4) translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .go-to-top {
+                right: 10px;
+                font-size: 12px;
+            }
         }
     </style>
 
