@@ -23,7 +23,7 @@ class AddNewRequest extends FormRequest
     {
         return [
             'about_us_text' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ];
     }
 }
