@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', $blog->title . ' | MSRL Blog - Green Ship Recycling Bangladesh')
+@section('description', $blog->short_description ?? 'Read the latest blog post from Mahinur Ship Recycling Limited (MSRL). Green ship recycling news and updates from Chittagong, Bangladesh.')
 @section('content')
     @include('frontend.layout.nav')
 

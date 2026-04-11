@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', 'Gallery - Ship Recycling Photos | MSRL Chittagong')
+@section('description', 'View photos of ship recycling operations at Mahinur Ship Recycling Limited (MSRL) in Sitakunda, Chittagong, Bangladesh.')
 @section('content')
     @include('frontend.layout.nav')
     <section class="galary-page-top">

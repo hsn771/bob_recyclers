@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', 'Blog - Latest News & Updates | MSRL Green Ship Recycling')
+@section('description', 'Read the latest news, updates and insights from Mahinur Ship Recycling Limited (MSRL) and Bay of Bengal Recyclers. Green ship recycling in Chittagong, Bangladesh.')
 @section('content')
 @include('frontend.layout.nav')
 

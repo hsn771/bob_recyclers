@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', 'Chairman Message - Mr. S M Nurun Nabi | MSRL Chittagong')
+@section('description', 'Message from the Chairman of Mahinur Ship Recycling Limited (MSRL), Mr. S M Nurun Nabi. Leading green ship recycling in Sitakunda, Chittagong, Bangladesh since 2016.')
 @section('content')
 @include('frontend.layout.nav')
 

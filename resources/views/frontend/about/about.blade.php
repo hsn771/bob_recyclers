@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', 'About MSRL - Mahinur Ship Recycling Limited | Chittagong')
+@section('description', 'Learn about Mahinur Ship Recycling Limited (MSRL) - A leading green ship recycling company in Sitakunda, Chittagong, Bangladesh. Established in 2016.')
 @section('content')
 @include('frontend.layout.nav')
   <section class="container my-5">

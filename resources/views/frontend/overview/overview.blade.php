@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', 'Ship Breaking Industry Overview | MSRL Chittagong Bangladesh')
+@section('description', 'Learn about the ship breaking and recycling industry in Bangladesh. MSRL operates in Sitakunda, Chittagong following Bangladesh Ship Recycling Act 2018 and Hong Kong Convention.')
 @section('content')
 @include('frontend.layout.nav')
   <section class="management-page-top">

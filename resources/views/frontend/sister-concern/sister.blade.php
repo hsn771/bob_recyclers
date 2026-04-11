@@ -1,5 +1,6 @@
 @extends('frontend.layout.app')
-@section('content')
+@section('title', 'Sister Concern - BOB Recyclers | MSRL Chittagong')
+@section('description', 'BOB Recyclers is the sister concern of Mahinur Ship Recycling Limited (MSRL). Both companies specialize in green ship recycling in Sitakunda, Chittagong, Bangladesh.')
 @include('frontend.layout.nav')
   <section class="container my-5">
         <div class="row">
