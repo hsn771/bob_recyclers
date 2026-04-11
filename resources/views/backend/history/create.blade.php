@@ -23,6 +23,15 @@
                     <h4 class="card-title">History Page</h4>
                 </div>--}}
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{ route('history.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="col-12">
@@ -30,8 +39,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="image">Image</label>
-                                <input type="file" id="image" class="form-control" name="image">
+                                <label for="image">Images (Can select multiple)</label>
+                                <input type="file" id="image" class="form-control" name="image[]" multiple>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

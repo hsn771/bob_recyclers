@@ -38,10 +38,13 @@ class HistoryController extends Controller
         $data=new History;
         $data->history_text=$request->history_text;
         if ($request->hasFile('image')) {
-                $imageName = rand(111, 999) . time() . '.' .
-                    $request->image->extension();
-                $request->image->move(public_path('uploads/history'), $imageName);
-                $data->image = $imageName;
+                $image_names = [];
+                foreach($request->file('image') as $img){
+                    $imageName = rand(111, 999) . time() . '.' . $img->extension();
+                    $img->move(public_path('uploads/history'), $imageName);
+                    $image_names[] = $imageName;
+                }
+                $data->image = json_encode($image_names);
             }
         if( $data->save()){
              $this->notice->success('Successfully Saved');
@@ -53,7 +56,6 @@ class HistoryController extends Controller
 
         }
         }catch(Exception $e){
-            dd($e);
             $this->notice->error('Please try again');
             return redirect()->back()->withInput();
         }
@@ -85,10 +87,17 @@ class HistoryController extends Controller
         $data= History::findOrFail(encryptor('decrypt',$id));
         $data->history_text=$request->history_text;
         if ($request->hasFile('image')) {
-                $imageName = rand(111, 999) . time() . '.' .
-                    $request->image->extension();
-                $request->image->move(public_path('uploads/history'), $imageName);
-                $data->image = $imageName;
+                $image_names = json_decode($data->image, true) ?: [];
+                if (!is_array($image_names)) {
+                    $image_names = $data->image ? [$data->image] : [];
+                }
+
+                foreach($request->file('image') as $img){
+                    $imageName = rand(111, 999) . time() . '.' . $img->extension();
+                    $img->move(public_path('uploads/history'), $imageName);
+                    $image_names[] = $imageName;
+                }
+                $data->image = json_encode($image_names);
             }
         if( $data->save()){
              $this->notice->success('Successfully Updated');
@@ -98,9 +107,36 @@ class HistoryController extends Controller
             return redirect()->back()->withInput();
         }
         }catch(Exception $e){
-            dd($e);
              $this->notice->error('Please try again');
             return redirect()->back()->withInput();
+        }
+    }
+
+    public function deleteImage($id, $img)
+    {
+        try {
+            $data = History::findOrFail(encryptor('decrypt', $id));
+            $images = json_decode($data->image, true) ?: [];
+            if (!is_array($images)) {
+                $images = $data->image ? [$data->image] : [];
+            }
+
+            if (($key = array_search($img, $images)) !== false) {
+                unset($images[$key]);
+                $filePath = public_path('uploads/history/' . $img);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+            }
+
+            $data->image = json_encode(array_values($images));
+            $data->save();
+
+            $this->notice->success('Image Deleted Successfully');
+            return redirect()->back();
+        } catch (Exception $e) {
+            $this->notice->error('Please try again');
+            return redirect()->back();
         }
     }
 

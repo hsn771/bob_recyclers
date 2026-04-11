@@ -23,7 +23,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             'history_text' => 'required|string',
-           'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|array',
+            'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:51200',
         ];
     }
 }

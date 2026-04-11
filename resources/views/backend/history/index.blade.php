@@ -36,9 +36,17 @@
                         <tr>
                             <td>{{ ++$loop->index }}</td>
                             <td>{!!$m->history_text!!}</td>
-                            <td>
-                               <img width="70px" src="{{asset('uploads/history/'.$m->image)}}" alt="Mission">
-                            </td>
+                             <td>
+                                @php
+                                    $images = json_decode($m->image);
+                                    if (!is_array($images)) {
+                                        $images = $m->image ? [$m->image] : [];
+                                    }
+                                @endphp
+                                @foreach($images as $img)
+                                   <img width="50px" src="{{asset('uploads/history/'.$img)}}" alt="History" class="mb-1 me-1 shadow-sm">
+                                @endforeach
+                             </td>
                             <td class="white-space-nowrap">
                                 <a href="{{route('history.edit',encryptor('encrypt',$m->id))}}">
                                     <i class="bi bi-pencil-square"></i>

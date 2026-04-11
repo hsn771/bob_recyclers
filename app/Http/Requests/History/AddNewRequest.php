@@ -23,7 +23,8 @@ class AddNewRequest extends FormRequest
     {
         return [
             'history_text' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|array',
+            'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:51200',
         ];
     }
 }

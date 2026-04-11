@@ -104,6 +104,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('buyer-logo', buyer::class);
     Route::resource('track-record', track::class);
     Route::resource('history', history::class);
+    Route::get('history/delete-image/{id}/{img}', [history::class, 'deleteImage'])->name('history.deleteImage');
     Route::resource('about-us', aboutUs::class);
     Route::resource('page', page::class);
     Route::resource('text', text::class);
