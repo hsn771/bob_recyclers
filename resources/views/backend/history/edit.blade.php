@@ -23,6 +23,15 @@
                     <h4 class="card-title">History Page</h4>
                 </div>
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{ route('history.update', encryptor('encrypt',$data->id)) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -31,8 +40,27 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="image">Image</label>
-                                <input type="file" id="image" class="form-control" name="image">
+                                <label for="image">Images (Can select multiple)</label>
+                                @php
+                                    $images = json_decode($data->image);
+                                    if (!is_array($images)) {
+                                        $images = $data->image ? [$data->image] : [];
+                                    }
+                                @endphp
+                                <div class="mb-2">
+                                    @foreach($images as $img)
+                                        <div class="position-relative d-inline-block me-2 mb-2">
+                                            <img src="{{ asset('uploads/history/' . $img) }}" width="100px" class="shadow-sm rounded">
+                                            <a href="{{ route('history.deleteImage', [encryptor('encrypt', $data->id), $img]) }}" 
+                                               class="btn btn-danger btn-sm position-absolute top-0 end-0 p-0" 
+                                               style="width: 20px; height: 20px; line-height: 18px;" 
+                                               onclick="return confirm('Are you sure you want to delete this image?')">
+                                                &times;
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <input type="file" id="image" class="form-control" name="image[]" multiple>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-2">Submit</button>

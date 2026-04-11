@@ -1,34 +1,136 @@
 .chairman-page-top {
   background-image: url(../../images/history.png);
-  height: 300px;
+  min-height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
 }
+
 .chairman-page-top .overlay {
   background-color: #000000ad;
-  height: 300px;
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
 }
+
 .chairman-page-top p {
-  font-size: 80px;
+  font-size: 54px;
   color: #fff;
   font-weight: 900;
+  margin-bottom: 0;
 }
+
 .chairman-page-top p span {
-  font-size: 150px;
+  font-size: 100px;
 }
+
 .chairman-name h5 {
   font-weight: 900;
   font-size: 40px;
   margin-bottom: 0;
 }
+
 .chairman-name p {
   font-weight: 600;
   font-size: 20px;
   margin-top: 0;
 }
+
 .designation {
-    background-color: #0d392edc;
-    position: absolute;
-    bottom: 0px;
-    right: 12px;
+  background-color: #0d392edc;
+  position: absolute;
+  bottom: 0px;
+  right: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .chairman-page-top p {
+    font-size: 36px;
+  }
+
+  .chairman-page-top p span {
+    font-size: 72px;
+  }
+
+  .chairman-name h5 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .chairman-page-top p {
+    font-size: 32px !important;
+    line-height: 1.1 !important;
+  }
+
+  .chairman-page-top p span {
+    font-size: 60px !important;
+  }
+
+  .chairman-page-top,
+  .chairman-page-top .overlay {
+    min-height: 250px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .chairman-page-top p {
+    font-size: 24px !important;
+  }
+
+  .chairman-page-top p span {
+    font-size: 48px !important;
+  }
+
+  .chairman-page-top,
+  .chairman-page-top .overlay {
+    min-height: 200px !important;
+  }
+}
+
+.message-content {
+  overflow: hidden !important;
+  max-height: 250px !important;
+  position: relative;
+  transition: max-height 0.4s ease;
+  text-align: justify;
+}
+
+.message-content.expanded,
+.message-content.no-truncate {
+  max-height: 5000px !important;
+  /* Force expansion */
+}
+
+.message-content:not(.expanded):not(.no-truncate)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(transparent, #fff);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.message-content.expanded::after,
+.message-content.no-truncate::after {
+  display: none !important;
+}
+
+.read-more-btn {
+  color: #0d392e;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+  color: #1a5a4a;
+  border-bottom: 2px solid #0d392e;
 }
