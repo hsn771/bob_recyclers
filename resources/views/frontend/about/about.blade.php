@@ -1,31 +1,36 @@
 @extends('frontend.layout.app')
+@section('title', 'About MSRL - Mahinur Ship Recycling Limited | Chittagong')
+@section('description', 'Learn about Mahinur Ship Recycling Limited (MSRL) - A leading green ship recycling company in Sitakunda, Chittagong, Bangladesh. Established in 2016.')
 @push('styles')
-<style>
-  @media (max-width: 767px) {
-    .experience img {
-      max-width: 50% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      display: block !important;
+  <style>
+    @media (max-width: 767px) {
+      .experience img {
+        max-width: 50% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
+
+      .history-images img {
+        max-width: 100% !important;
+        width: 100% !important;
+        display: block !important;
+      }
+
+      .top-exprience {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        text-align: center !important;
+        margin-top: 15px !important;
+      }
+
+      .top-exprience p {
+        font-size: 35px !important;
+        line-height: 1 !important;
+      }
     }
-    .history-images img {
-      max-width: 100% !important;
-      width: 100% !important;
-      display: block !important;
-    }
-    .top-exprience {
-      position: relative !important;
-      top: 0 !important;
-      right: 0 !important;
-      text-align: center !important;
-      margin-top: 15px !important;
-    }
-    .top-exprience p {
-      font-size: 35px !important;
-      line-height: 1 !important;
-    }
-  }
-</style>
+  </style>
 @endpush
 @section('content')
   @include('frontend.layout.nav')
@@ -95,7 +100,7 @@
           @php
             $images = json_decode($history->image);
             if (!is_array($images)) {
-                $images = $history->image ? [$history->image] : [];
+              $images = $history->image ? [$history->image] : [];
             }
           @endphp
           @foreach($images as $img)
