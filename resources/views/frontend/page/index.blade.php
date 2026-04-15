@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', $page_data->page_title . ' | MSRL - Green Ship Recycling Bangladesh')
+@section('description', 'Mahinur Ship Recycling Limited (MSRL) - ' . $page_data->page_title . '. Green ship recycling company in Sitakunda, Chittagong, Bangladesh.')
 @section('content')
 @include('frontend.layout.nav')
 <style>

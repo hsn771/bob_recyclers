@@ -1,4 +1,6 @@
 @extends('frontend.layout.app')
+@section('title', 'Contact MSRL - Mahinur Ship Recycling Limited | Chittagong')
+@section('description', 'Contact Mahinur Ship Recycling Limited (MSRL) in Sitakunda, Chittagong, Bangladesh. Call us at +880 1708 893 034 or email info@msrlbob.com.')
 @section('content')
 @include('frontend.layout.nav')
 
