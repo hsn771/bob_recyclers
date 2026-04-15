@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'name' => 'required|string',
             // 'country' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:51200',
             // 'weight' => 'required|numeric',
             // 'type' => 'required|in:1,2', 
             'category' => 'required|in:1,2',
