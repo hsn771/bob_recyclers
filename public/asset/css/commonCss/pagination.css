@@ -1,3 +1,43 @@
-.pagination-custom a {
+.pagination-custom .page-link {
   color: var(--secondary-color) !important;
 }
+
+.pagination-custom .page-item.active .page-link {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: #fff !important;
+}
+
+.pagination-custom .page-link:hover {
+  background-color: var(--backgroud-brand) !important;
+  color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+.pagination-custom .page-item.disabled .page-link {
+  color: #6c757d !important;
+}
+
+/* Hide the summary text */
+.pagination-custom .text-muted.small {
+  display: none !important;
+}
+
+/* Center the pagination links wrapper */
+.pagination-custom nav > div.d-sm-flex {
+  justify-content: center !important;
+}
+
+.pagination-custom nav > div.d-sm-flex > div:first-child {
+  display: none !important;
+}
+
+/* Ensure the nav takes full width so centering works */
+.pagination-custom {
+  width: 100%;
+}
+
+.pagination-custom nav {
+  width: 100%;
+}
+

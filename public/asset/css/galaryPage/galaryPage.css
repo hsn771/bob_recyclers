@@ -16,3 +16,23 @@
 .galary-page-top p span {
   font-size: 150px;
 }
+
+/* Gallery Photo Harmonization & Hover Fix */
+.galary-img img {
+  width: 100%;
+  min-height: 280px;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top; /* Ensures faces/headers of documents correspond to the top and aren't chopped off */
+  border-radius: 8px;
+  transition: max-height 0.8s ease;  /* Smooth extension effect */
+}
+
+.galary-img img:hover {
+  max-height: 1500px; /* Allows the image to expand fluidly to its full natural height upon hover */
+}
+
+/* Add margin bottom uniformly to rows so hover expansions don't overlap awkwardly with next elements */
+.galary-img > div {
+  margin-bottom: 30px;
+}
