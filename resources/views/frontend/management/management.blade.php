@@ -7,10 +7,10 @@
 
     <style>
         /* .management-page-top {
-                                    background: url('/frontend/images/banner.jpg') center/cover no-repeat;
-                                    height: 250px;
-                                    position: relative;
-                                } */
+                                                background: url('/frontend/images/banner.jpg') center/cover no-repeat;
+                                                height: 250px;
+                                                position: relative;
+                                            } */
 
         .management-page-top .overlay {
             background: rgba(0, 0, 0, 0.5);
@@ -187,7 +187,7 @@
 
                     <div class="designation text-white p-3 mt-4" style="width:55%;">
                         <h5>Mr. S M Nurun Nabi</h5>
-                        <p>Chairman</p>
+                        <p>Managing Director</p>
                     </div>
 
                 </div>
@@ -196,7 +196,7 @@
 
                     <div>
 
-                        <h2 class="chairman-title">Chairman Message</h2>
+                        <h2 class="chairman-title">Managing Director Message</h2>
 
                         <p class="chairman-text mb-4">
 
