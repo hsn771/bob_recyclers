@@ -7,10 +7,10 @@
 
     <style>
         /* .management-page-top {
-                background: url('/frontend/images/banner.jpg') center/cover no-repeat;
-                height: 250px;
-                position: relative;
-            } */
+                    background: url('/frontend/images/banner.jpg') center/cover no-repeat;
+                    height: 250px;
+                    position: relative;
+                } */
 
         .management-page-top .overlay {
             background: rgba(0, 0, 0, 0.5);
@@ -164,7 +164,8 @@
     </style>
 
 
-    <section class="management-page-top" style="background-image: url('{{ $management->banner_image ? asset('uploads/management/' . $management->banner_image) : asset('frontend/images/banner.jpg') }}'); background-size: cover; background-position: center; height: 250px; position: relative;">
+    <section class="management-page-top"
+        style="background-image: url('{{ $management->banner_image ? asset('uploads/management/' . $management->banner_image) : asset('frontend/images/banner.jpg') }}'); background-size: cover; background-position: center; height: 250px; position: relative;">
         <div class="overlay">
             <div class="container pt-5 d-flex align-items-end">
                 <p><span>M</span>anagement Overview</p>
@@ -326,7 +327,7 @@
 
             <!-- Yard Management -->
 
-            <div class="page-inner-body my-4 text-center">
+            {{-- <div class="page-inner-body my-4 text-center">
 
                 <p>{{$management->yard_description}}</p>
 
@@ -337,31 +338,31 @@
 
                 @foreach($yardM as $manager)
 
-                    <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3">
 
-                        <div class="team-card">
+                    <div class="team-card">
 
-                            <div class="team-img">
+                        <div class="team-img">
 
-                                <img src="{{ asset('uploads/yardManagement/' . $manager->image) }}">
+                            <img src="{{ asset('uploads/yardManagement/' . $manager->image) }}">
 
-                            </div>
+                        </div>
 
-                            <div class="team-info">
+                        <div class="team-info">
 
-                                <h5>{{ $manager->name }}</h5>
+                            <h5>{{ $manager->name }}</h5>
 
-                                <p>{{ $manager->designation }}</p>
-
-                            </div>
+                            <p>{{ $manager->designation }}</p>
 
                         </div>
 
                     </div>
 
+                </div>
+
                 @endforeach
 
-            </div>
+            </div> --}}
 
 
             <div class="page-inner-body my-4 text-center">
