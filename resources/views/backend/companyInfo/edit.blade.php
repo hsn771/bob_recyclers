@@ -54,6 +54,13 @@
                                         <label for="footer_logo">Footer Logo</label>
                                         <input type="file" id="footer_logo" class="form-control" name="footer_logo">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="gallery_banner">Gallery Banner</label>
+                                        <input type="file" id="gallery_banner" class="form-control" name="gallery_banner">
+                                        @if($info->gallery_banner)
+                                            <img src="{{ asset('uploads/companyInfo/' . $info->gallery_banner) }}" alt="Gallery Banner" style="width: 100px; margin-top: 10px;">
+                                        @endif
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">

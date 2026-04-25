@@ -42,6 +42,11 @@ class ChairmanController extends Controller
                 $request->image->move(public_path('uploads/chairman'), $imageName);
                 $data->image = $imageName;
             }
+            if ($request->hasFile('banner_image')) {
+                $imageName = time() . '_' . uniqid() . '.' . $request->banner_image->extension();
+                $request->banner_image->move(public_path('uploads/chairman'), $imageName);
+                $data->banner_image = $imageName;
+            }
             if( $data->save()){
                  $this->notice->success('Successfully Saved');
                  return redirect()->route('chairman.index');
@@ -88,6 +93,11 @@ class ChairmanController extends Controller
                     $request->image->extension();
                 $request->image->move(public_path('uploads/chairman'), $imageName);
                 $data->image = $imageName;
+            }
+            if ($request->hasFile('banner_image')) {
+                $imageName = time() . '_' . uniqid() . '.' . $request->banner_image->extension();
+                $request->banner_image->move(public_path('uploads/chairman'), $imageName);
+                $data->banner_image = $imageName;
             }
             if( $data->save()){
                  $this->notice->success('Successfully Updated');

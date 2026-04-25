@@ -23,7 +23,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             'chairman_text' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ];
     }
 }

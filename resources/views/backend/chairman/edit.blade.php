@@ -37,8 +37,23 @@
                                 <div class="form-group">
                                     <label for="image">Image</label>
                                     <input type="file" id="image" class="form-control" name="image">
+                                    @if($data->image)
+                                        <img src="{{ asset('uploads/chairman/' . $data->image) }}" alt="Image" style="width: 100px; margin-top: 10px;">
+                                    @endif
                                     @if($errors->has('image'))
                                         <span class="text-danger"> {{ $errors->first('image') }}</span>
+                                     @endif
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="banner_image">Banner Image</label>
+                                    <input type="file" id="banner_image" class="form-control" name="banner_image">
+                                    @if($data->banner_image)
+                                        <img src="{{ asset('uploads/chairman/' . $data->banner_image) }}" alt="Banner" style="width: 100px; margin-top: 10px;">
+                                    @endif
+                                    @if($errors->has('banner_image'))
+                                        <span class="text-danger"> {{ $errors->first('banner_image') }}</span>
                                      @endif
                                 </div>
                             </div>

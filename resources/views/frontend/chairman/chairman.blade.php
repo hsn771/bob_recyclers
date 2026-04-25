@@ -85,9 +85,10 @@
 @section('content')
     @include('frontend.layout.nav')
 
-    <section class="chairman-page-top">
+    <section class="chairman-page-top"
+        style="background-image: url('{{ $chairman->banner_image ? asset('uploads/chairman/' . $chairman->banner_image) : asset('frontend/images/banner.jpg') }}'); background-size: cover; background-position: center; height: 250px; position: relative;">
         <div class="overlay">
-            <div class="container h-100 d-flex align-items-center">
+            <div class="container pt-5 d-flex align-items-end" style="height: 250px;">
                 <p><span>M</span>anaging Director Message</p>
             </div>
         </div>

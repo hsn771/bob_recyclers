@@ -49,6 +49,12 @@ class ManagementController extends Controller
         $data->top_description=$request->top_description;
         $data->mid_description=$request->mid_description;
         $data->yard_description=$request->yard_description;
+
+        if ($request->hasFile('banner_image')) {
+            $imageName = time() . '_' . uniqid() . '.' . $request->banner_image->extension();
+            $request->banner_image->move(public_path('uploads/management'), $imageName);
+            $data->banner_image = $imageName;
+        }
          
         if( $data->save()){
              $this->notice->success('Successfully saved');
@@ -94,6 +100,12 @@ class ManagementController extends Controller
         $data->top_description=$request->top_description;
         $data->mid_description=$request->mid_description;
         $data->yard_description=$request->yard_description;
+
+        if ($request->hasFile('banner_image')) {
+            $imageName = time() . '_' . uniqid() . '.' . $request->banner_image->extension();
+            $request->banner_image->move(public_path('uploads/management'), $imageName);
+            $data->banner_image = $imageName;
+        }
          
         if( $data->save()){
              $this->notice->success('Successfully saved');

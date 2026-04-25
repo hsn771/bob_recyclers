@@ -54,6 +54,12 @@ class CompanyInfoController extends Controller
                 $request->footer_logo->move(public_path('uploads/companyInfo'), $footerLogoName);
                 $info->footer_logo = $footerLogoName;
             }
+          if ($request->hasFile('gallery_banner')) {
+                $galleryBannerName = 'gallery_' . rand(111, 999) . time() . '.' .
+                    $request->gallery_banner->extension();
+                $request->gallery_banner->move(public_path('uploads/companyInfo'), $galleryBannerName);
+                $info->gallery_banner = $galleryBannerName;
+            }
         if( $info->save()){
              $this->notice->success('Successfully saved');
              return redirect()->route('info.index');
@@ -111,6 +117,12 @@ class CompanyInfoController extends Controller
                     $request->footer_logo->extension();
                 $request->footer_logo->move(public_path('uploads/companyInfo'), $footerLogoName);
                 $info->footer_logo = $footerLogoName;
+            }
+        if ($request->hasFile('gallery_banner')) {
+                $galleryBannerName = 'gallery_' . rand(111, 999) . time() . '.' .
+                    $request->gallery_banner->extension();
+                $request->gallery_banner->move(public_path('uploads/companyInfo'), $galleryBannerName);
+                $info->gallery_banner = $galleryBannerName;
             }
 
         if ($info->save()) {

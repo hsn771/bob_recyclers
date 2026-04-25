@@ -23,7 +23,8 @@ class AddNewRequest extends FormRequest
     {
         return [
             'chairman_text' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ];
     }
 }

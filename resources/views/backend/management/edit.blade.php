@@ -23,7 +23,7 @@
                     <h4 class="card-title">Edit Management</h4>
                 </div>--}}
                 <div class="card-body">
-                    <form action="{{ route('team.update', encryptor('encrypt',$data->id)) }}" method="POST">
+                    <form action="{{ route('team.update', encryptor('encrypt',$data->id)) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
@@ -78,6 +78,19 @@
                                         <span class="text-danger"> {{ $errors->first('yard_description') }}</span>
                                     @endif
                                 </div> 
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="banner_image">Banner Image:</label>
+                                    <input type="file" id="banner_image" class="form-control" name="banner_image">
+                                    @if($data->banner_image)
+                                        <img src="{{ asset('uploads/management/' . $data->banner_image) }}" alt="Banner" style="width: 100px; margin-top: 10px;">
+                                    @endif
+                                    @if($errors->has('banner_image'))
+                                        <span class="text-danger"> {{ $errors->first('banner_image') }}</span>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

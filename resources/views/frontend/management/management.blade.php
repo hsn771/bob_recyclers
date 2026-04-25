@@ -7,10 +7,10 @@
 
     <style>
         /* .management-page-top {
-                                                background: url('/frontend/images/banner.jpg') center/cover no-repeat;
-                                                height: 250px;
-                                                position: relative;
-                                            } */
+                background: url('/frontend/images/banner.jpg') center/cover no-repeat;
+                height: 250px;
+                position: relative;
+            } */
 
         .management-page-top .overlay {
             background: rgba(0, 0, 0, 0.5);
@@ -128,7 +128,7 @@
         }
 
         .team-img {
-            height: 340px;
+            height: 220px;
             overflow: hidden;
         }
 
@@ -160,7 +160,7 @@
     </style>
 
 
-    <section class="management-page-top">
+    <section class="management-page-top" style="background-image: url('{{ $management->banner_image ? asset('uploads/management/' . $management->banner_image) : asset('frontend/images/banner.jpg') }}'); background-size: cover; background-position: center; height: 250px; position: relative;">
         <div class="overlay">
             <div class="container pt-5 d-flex align-items-end">
                 <p><span>M</span>anagement Overview</p>
@@ -171,7 +171,7 @@
 
     <!-- chairman -->
 
-    <section class="chairman brand-bg">
+    {{-- <section class="chairman brand-bg">
 
         <div class="container">
 
@@ -181,7 +181,7 @@
 
                     @if($chairman && $chairman->image)
 
-                        <img src="{{ asset('uploads/chairman/' . $chairman->image) }}" class="img-fluid">
+                    <img src="{{ asset('uploads/chairman/' . $chairman->image) }}" class="img-fluid">
 
                     @endif
 
@@ -202,7 +202,7 @@
 
                             @if($chairman && $chairman->chairman_text)
 
-                                {!! \Illuminate\Support\Str::limit($chairman->chairman_text, 366, '...') !!}
+                            {!! \Illuminate\Support\Str::limit($chairman->chairman_text, 366, '...') !!}
 
                             @endif
 
@@ -218,7 +218,7 @@
 
         </div>
 
-    </section>
+    </section> --}}
 
 
     <main class="brand-text-color">
@@ -241,11 +241,11 @@
             </div>
 
 
-            <div class="row g-4 my-4">
+            <div class="row g-4 my-4 justify-content-center">
 
                 @foreach($topM as $manager)
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3">
 
                         <div class="team-card">
 
@@ -292,7 +292,7 @@
 
                 @foreach($midM as $manager)
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3">
 
                         <div class="team-card">
 
@@ -333,7 +333,7 @@
 
                 @foreach($yardM as $manager)
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3">
 
                         <div class="team-card">
 

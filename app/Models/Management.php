@@ -10,7 +10,8 @@ class Management extends Model
     protected $fillable = [
         'top_management_title', 'top_description',
         'mid_management_title', 'mid_description',
-        'yard_management_title', 'yard_description'
+        'yard_management_title', 'yard_description',
+        'banner_image'
     ];
 
     // public function topManagement()

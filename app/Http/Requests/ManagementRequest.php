@@ -28,6 +28,7 @@ class ManagementRequest extends FormRequest
             'top_description' => 'required|string',
             'mid_description' => 'required|string',
             'yard_description' => 'required|string',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ];
     }
 }

@@ -3,9 +3,10 @@
 @section('description', 'View photos of ship recycling operations at Mahinur Ship Recycling Limited (MSRL) in Sitakunda, Chittagong, Bangladesh.')
 @section('content')
     @include('frontend.layout.nav')
-    <section class="galary-page-top">
+    <section class="galary-page-top"
+        style="background-image: url('{{ $info->gallery_banner ? asset('uploads/companyInfo/' . $info->gallery_banner) : asset('frontend/images/history.png') }}'); background-size: cover; background-position: center; height: 300px; position: relative;">
         <div class="overlay">
-            <div class="container pt-5 d-flex align-items-end">
+            <div class="container pt-5 d-flex align-items-end" style="height: 300px;">
                 <p><span>G</span>allery</p>
             </div>
         </div>
