@@ -141,7 +141,7 @@ class ShipController extends Controller
     {
         $info = CompanyInfo::first();
         $sister= SisterLogo::all();
-        $ships = Ship::paginate(15); // Paginate the ships with 10 items per page
+        $ships = Ship::paginate(16); // Paginate the ships with 10 items per page
         return view('frontend.gallery.gallery', compact('ships','info','sister'));
     }
 
