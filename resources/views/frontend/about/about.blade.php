@@ -36,7 +36,7 @@
 @endpush
 @section('content')
   @include('frontend.layout.nav')
-  <section class="about-page-top" style="@if($about->image) background-image: url('{{ asset('uploads/aboutUs/' . $about->image) }}'); background-position: center; @endif">
+  <section class="about-page-top" style="@if($about->banner_image) background-image: url('{{ asset('uploads/aboutUs/' . $about->banner_image) }}'); background-position: center; @endif">
     <div class="overlay">
       <div class="container pt-5 d-flex align-items-end">
         <p><span>A</span>bout Us</p>

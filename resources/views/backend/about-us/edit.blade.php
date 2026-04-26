@@ -32,16 +32,30 @@
                                 <span class="text-danger"> {{ $errors->first('about_us_text') }}</span>
                           @endif
                         </div>
-                        <div class="col-md-6 mt-3">
-                            <div class="form-group">
-                                <label for="image">Banner Image</label>
-                                <input type="file" id="image" class="form-control" name="image">
-                                @if($data->image)
-                                    <img src="{{ asset('uploads/aboutUs/' . $data->image) }}" alt="Banner" width="100" class="mt-2 rounded">
-                                @endif
-                                @if($errors->has('image'))
-                                    <span class="text-danger"> {{ $errors->first('image') }}</span>
-                                @endif
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <div class="form-group">
+                                    <label for="image">About Image</label>
+                                    <input type="file" id="image" class="form-control" name="image">
+                                    @if($data->image)
+                                        <img src="{{ asset('uploads/aboutUs/' . $data->image) }}" alt="About" width="100" class="mt-2 rounded shadow-sm">
+                                    @endif
+                                    @if($errors->has('image'))
+                                        <span class="text-danger"> {{ $errors->first('image') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <div class="form-group">
+                                    <label for="banner_image">Banner Image</label>
+                                    <input type="file" id="banner_image" class="form-control" name="banner_image">
+                                    @if($data->banner_image)
+                                        <img src="{{ asset('uploads/aboutUs/' . $data->banner_image) }}" alt="Banner" width="100" class="mt-2 rounded shadow-sm">
+                                    @endif
+                                    @if($errors->has('banner_image'))
+                                        <span class="text-danger"> {{ $errors->first('banner_image') }}</span>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-2">Submit</button>

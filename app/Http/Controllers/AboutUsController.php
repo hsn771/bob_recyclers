@@ -44,6 +44,12 @@ class AboutUsController extends Controller
             $request->image->move(public_path('uploads/aboutUs'), $imageName);
             $data->image = $imageName;
         }
+        if ($request->hasFile('banner_image')) {
+            $imageName = rand(111, 999) . time() . '.' .
+                $request->banner_image->extension();
+            $request->banner_image->move(public_path('uploads/aboutUs'), $imageName);
+            $data->banner_image = $imageName;
+        }
         if( $data->save()){
              $this->notice->success('Successfully saved');
              return redirect()->route('about-us.index');
@@ -90,6 +96,12 @@ class AboutUsController extends Controller
                 $request->image->extension();
             $request->image->move(public_path('uploads/aboutUs'), $imageName);
             $data->image = $imageName;
+        }
+        if ($request->hasFile('banner_image')) {
+            $imageName = rand(111, 999) . time() . '.' .
+                $request->banner_image->extension();
+            $request->banner_image->move(public_path('uploads/aboutUs'), $imageName);
+            $data->banner_image = $imageName;
         }
         if( $data->save()){
              $this->notice->success('Successfully Updated');

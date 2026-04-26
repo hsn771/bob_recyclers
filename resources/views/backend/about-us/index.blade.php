@@ -26,8 +26,8 @@
                     <thead>
                         <tr>
                             <th>SL</th>
-                            <th>Content</th>
-                            <th>Image</th>
+                            <th>About Image</th>
+                            <th>Banner Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -38,6 +38,9 @@
                             <td>{{ \Illuminate\Support\Str::limit(strip_tags($m->about_us_text), 100) }}</td>
                             <td>
                                <img width="80px" src="{{asset('uploads/aboutUs/'.$m->image)}}" class="rounded shadow-sm" alt="About">
+                            </td>
+                            <td>
+                               <img width="80px" src="{{asset('uploads/aboutUs/'.$m->banner_image)}}" class="rounded shadow-sm" alt="Banner">
                             </td>
                            <td class="white-space-nowrap">
                                 <a href="{{route('about-us.edit',encryptor('encrypt',$m->id))}}">
