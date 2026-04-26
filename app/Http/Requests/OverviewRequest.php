@@ -23,6 +23,7 @@ class OverviewRequest extends FormRequest
     {
         return [
            'overview_text' => 'required|string',
+           'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
         ];
     }
 }

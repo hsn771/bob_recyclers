@@ -27,8 +27,13 @@ class OverviewController extends Controller
         try{
         $overview=new Overview;
         $overview->overview_text=$request->overview_text;
+        if ($request->hasFile('image')) {
+            $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads/overview'), $imageName);
+            $overview->image = $imageName;
+        }
         if( $overview->save()){
-             $this->notice->success('Successfully Updated');
+             $this->notice->success('Successfully Saved');
              return redirect()->route('industry.index');
        
         }else{
@@ -37,7 +42,6 @@ class OverviewController extends Controller
            
         }
         }catch(Exception $e){
-            dd($e);
              $this->notice->error('Please try again');
             return redirect()->back()->withInput(); 
         }
@@ -64,12 +68,16 @@ class OverviewController extends Controller
          try{
          $overview = Overview::findOrFail(encryptor('decrypt', $id));
          $overview->overview_text=$request->overview_text;
+         if ($request->hasFile('image')) {
+            $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads/overview'), $imageName);
+            $overview->image = $imageName;
+         }
          $overview->save();
             $this->notice->success('Successfully saved');
             return redirect()->route('industry.index');
            
         }catch(Exception $e){
-            dd($e);
              $this->notice->error('Please try again');
             return redirect()->back()->withInput();
         }

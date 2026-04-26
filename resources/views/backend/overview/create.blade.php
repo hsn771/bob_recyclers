@@ -23,10 +23,21 @@
                     <h4 class="card-title">Industry Page</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('industry.store') }}" method="POST">
+                    <form action="{{ route('industry.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <textarea name="overview_text" cols="30" rows="8" id="overview_text" class="form-control">{{old('overview_text')}}</textarea>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="image">Background Image</label>
+                                    <input type="file" name="image" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="overview_text">Overview Text</label>
+                                <textarea name="overview_text" cols="30" rows="8" id="overview_text" class="form-control">{{old('overview_text')}}</textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </form>
                 </div>
             </div>

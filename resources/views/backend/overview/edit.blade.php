@@ -23,13 +23,25 @@
                     <h4 class="card-title">Industry Page</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('industry.update', encryptor('encrypt',$overview->id)) }}" method="POST">
+                    <form action="{{ route('industry.update', encryptor('encrypt',$overview->id)) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
-                             <textarea name="overview_text" cols="30" rows="8" id="overview_text" class="form-control">{{ old('overview_text', $overview->overview_text)}}</textarea>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="image">Background Image</label>
+                                    <input type="file" name="image" class="form-control">
+                                    @if($overview->image)
+                                        <img src="{{ asset('uploads/overview/' . $overview->image) }}" alt="Background" width="100" class="mt-2">
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="overview_text">Overview Text</label>
+                                <textarea name="overview_text" cols="30" rows="8" id="overview_text" class="form-control">{{ old('overview_text', $overview->overview_text)}}</textarea>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </form>
                 </div>
 

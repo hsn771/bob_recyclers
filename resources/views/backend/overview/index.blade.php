@@ -26,6 +26,7 @@
                     <thead>
                         <tr>
                             <th>SL</th>
+                            <th>Image</th>
                             <th>Content</th>
                             <th>Action</th>
                         </tr>
@@ -34,6 +35,7 @@
                         @forelse ($overview as $m)
                         <tr>
                             <td>{{ ++$loop->index }}</td>
+                            <td><img src="{{ asset('uploads/overview/' . $m->image) }}" width="100px" alt=""></td>
                             <td>{!!$m->overview_text!!}</td>
                            
                            <td class="white-space-nowrap">
