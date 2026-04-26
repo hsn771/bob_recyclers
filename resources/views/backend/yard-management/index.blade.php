@@ -36,7 +36,7 @@
                             <tbody>
                                 @forelse ($data as $d)
                                     <tr>
-                                        <td>{{ $d->id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $d->name }}</td>
                                         <td>{{ $d->designation }}</td>
                                          <td>
