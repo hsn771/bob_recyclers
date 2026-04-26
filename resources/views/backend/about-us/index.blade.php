@@ -33,11 +33,11 @@
                     </thead>
                     <tbody>
                         @forelse ($data as $m)
-                        <tr>
-                            <td>{{ ++$loop->index }}</td>
-                            <td>{!!$m->about_us_text!!}</td>
+                        <tr class="align-middle">
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit(strip_tags($m->about_us_text), 100) }}</td>
                             <td>
-                               <img width="70px" src="{{asset('uploads/aboutUs/'.$m->image)}}" alt="About">
+                               <img width="80px" src="{{asset('uploads/aboutUs/'.$m->image)}}" class="rounded shadow-sm" alt="About">
                             </td>
                            <td class="white-space-nowrap">
                                 <a href="{{route('about-us.edit',encryptor('encrypt',$m->id))}}">

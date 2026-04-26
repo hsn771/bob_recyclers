@@ -32,10 +32,13 @@
                                 <span class="text-danger"> {{ $errors->first('about_us_text') }}</span>
                           @endif
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-3">
                             <div class="form-group">
-                                <label for="sister_image">Image</label>
+                                <label for="image">Banner Image</label>
                                 <input type="file" id="image" class="form-control" name="image">
+                                @if($data->image)
+                                    <img src="{{ asset('uploads/aboutUs/' . $data->image) }}" alt="Banner" width="100" class="mt-2 rounded">
+                                @endif
                                 @if($errors->has('image'))
                                     <span class="text-danger"> {{ $errors->first('image') }}</span>
                                 @endif

@@ -31,13 +31,21 @@
       }
     }
   </style>
+@push('styles')
+  <link rel="stylesheet" href="{{ asset('asset/css/about/about.css') }}">
 @endpush
 @section('content')
   @include('frontend.layout.nav')
+  <section class="about-page-top" style="@if($about->image) background-image: url('{{ asset('uploads/aboutUs/' . $about->image) }}'); background-position: center; @endif">
+    <div class="overlay">
+      <div class="container pt-5 d-flex align-items-end">
+        <p><span>A</span>bout Us</p>
+      </div>
+    </div>
+  </section>
   <section class="container my-5">
     <div class="row">
       <div class="col-12 mb-4">
-        <h2 class="pb-3" style="font-weight: 900; font-size: 50px; color: #0d392e;">About Us</h2>
         <video width="100%" height="auto" style="max-height: 600px; display: block; margin: 0 auto;" controls>
           <source src="{{ asset('media/about_video.mp4') }}" type="video/mp4">
           Your browser does not support the video tag.
