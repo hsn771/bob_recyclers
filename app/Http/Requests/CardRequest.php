@@ -31,6 +31,7 @@ class CardRequest extends FormRequest
             'number_3' => 'required|string|max:300',
             'number_4' => 'required|string|max:300',
             'short_description' => 'required|string|max:600',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
         ];
     }
 }

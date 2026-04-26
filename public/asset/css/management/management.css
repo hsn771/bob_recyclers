@@ -2,6 +2,7 @@
   background-image: url(../../images/history.png);
   height: 300px;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .management-page-top .overlay {

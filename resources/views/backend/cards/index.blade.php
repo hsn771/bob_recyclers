@@ -22,36 +22,39 @@
                 <a href="{{ route('track-record.create') }}" class="btn btn-primary mb-3">Add New</a>
             </div> --}}
             <div class="card-body">
-                <table class="table table-striped" id="table1">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="table1">
                     <thead>
-                        <tr>
-                            <th>SL</th>
-                            <th>Title 1</th>
-                            <th>Title 2</th>
-                            <th>Title 3</th>
-                            <th>Title 4</th>
-                            <th>Number 1</th>
-                            <th>Number 2</th>
-                            <th>Number 3</th>
-                            <th>Number 4</th>
-                            <th>Description</th>
-                            <th>Action</th>
+                        <tr class="text-center">
+                            <th style="min-width: 50px;">SL</th>
+                            <th style="min-width: 150px;">Title 1</th>
+                            <th style="min-width: 150px;">Title 2</th>
+                            <th style="min-width: 150px;">Title 3</th>
+                            <th style="min-width: 150px;">Title 4</th>
+                            <th style="min-width: 100px;">Image</th>
+                            <th style="min-width: 100px;">Number 1</th>
+                            <th style="min-width: 100px;">Number 2</th>
+                            <th style="min-width: 100px;">Number 3</th>
+                            <th style="min-width: 100px;">Number 4</th>
+                            <th style="min-width: 200px;">Description</th>
+                            <th style="min-width: 80px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($data as $s)
-                        <tr>
+                        <tr class="align-middle">
                             <td>{{ ++$loop->index }}</td>
                             <td>{{$s->title_1}}</td>
                             <td>{{$s->title_2}}</td>
                             <td>{{$s->title_3}}</td>
                             <td>{{$s->title_4}}</td>
+                            <td><img src="{{ asset('uploads/trackRecord/' . $s->image) }}" width="80px" class="rounded shadow-sm" alt=""></td>
                             <td>{{$s->number_1}}</td>
                             <td>{{$s->number_2}}</td>
                             <td>{{$s->number_3}}</td>
                             <td>{{$s->number_4}}</td>
-                            <td>{{$s->short_description}}</td>
-                           <td class="white-space-nowrap">
+                            <td title="{{ $s->short_description }}">{{ \Illuminate\Support\Str::limit($s->short_description, 50) }}</td>
+                           <td class="white-space-nowrap text-center">
                                 <a href="{{route('track-record.edit',encryptor('encrypt',$s->id))}}">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
@@ -69,6 +72,7 @@
                          @endforelse
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </section>

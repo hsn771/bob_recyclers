@@ -23,9 +23,20 @@
                     <h4 class="card-title">Track Records</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('track-record.update', encryptor('encrypt',$data->id)) }}" method="POST">
+                    <form action="{{ route('track-record.update', encryptor('encrypt',$data->id)) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="image">Background Image</label>
+                                    <input type="file" id="image" class="form-control" name="image">
+                                    @if($data->image)
+                                        <img src="{{ asset('uploads/trackRecord/' . $data->image) }}" alt="Background" width="100" class="mt-2">
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

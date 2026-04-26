@@ -1,7 +1,8 @@
 .track-page-top {
-  background-image: url(../../images/ship.jpg);
+  background-image: url(../../images/history.png);
   height: 300px;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .track-page-top .overlay {

@@ -23,8 +23,16 @@
                     <h4 class="card-title">Track Records</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('track-record.store') }}" method="POST">
+                    <form action="{{ route('track-record.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="image">Background Image</label>
+                                    <input type="file" id="image" class="form-control" name="image">
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

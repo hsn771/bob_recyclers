@@ -1,7 +1,7 @@
 @extends('frontend.layout.app')
 @section('content')
 @include('frontend.layout.nav')
- <section class="track-page-top">
+ <section class="track-page-top" style="@if($card->image) background-image: url('{{ asset('uploads/trackRecord/' . $card->image) }}'); background-position: center; @endif">
       <div class="overlay">
         <div class="container pt-5 d-flex align-items-end">
           <p><span>T</span>rack Record of Scrap Ship Import</p>

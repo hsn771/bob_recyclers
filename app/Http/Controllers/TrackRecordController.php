@@ -44,6 +44,11 @@ class TrackRecordController extends Controller
         $data->number_3 = $request->number_3;
         $data->number_4 = $request->number_4;
         $data->short_description = $request->short_description;
+        if ($request->hasFile('image')) {
+            $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads/trackRecord'), $imageName);
+            $data->image = $imageName;
+        }
         if( $data->save()){
              $this->notice->success('Successfully saved');
              return redirect()->route('track-record.index');
@@ -52,7 +57,6 @@ class TrackRecordController extends Controller
             return redirect()->back()->withInput();
         }
         }catch(Exception $e){
-            dd($e);
              $this->notice->error('Please try again');
             return redirect()->back()->withInput();
         }
@@ -92,6 +96,11 @@ class TrackRecordController extends Controller
         $data->number_3=$request->number_3;
         $data->number_4=$request->number_4;
         $data->short_description = $request->short_description;
+        if ($request->hasFile('image')) {
+            $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads/trackRecord'), $imageName);
+            $data->image = $imageName;
+        }
         if( $data->save()){
              $this->notice->success('Successfully saved');
              return redirect()->route('track-record.index');
@@ -100,7 +109,6 @@ class TrackRecordController extends Controller
             return redirect()->back()->withInput();
         }
         }catch(Exception $e){
-            dd($e);
             $this->notice->error('Please try again');
             return redirect()->back()->withInput();
         }
