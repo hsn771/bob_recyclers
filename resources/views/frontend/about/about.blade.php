@@ -2,41 +2,42 @@
 @section('title', 'About MSRL - Mahinur Ship Recycling Limited | Chittagong')
 @section('description', 'Learn about Mahinur Ship Recycling Limited (MSRL) - A leading green ship recycling company in Sitakunda, Chittagong, Bangladesh. Established in 2016.')
 @push('styles')
-  <style>
-    @media (max-width: 767px) {
-      .experience img {
-        max-width: 50% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        display: block !important;
-      }
-
-      .history-images img {
-        max-width: 100% !important;
-        width: 100% !important;
-        display: block !important;
-      }
-
-      .top-exprience {
-        position: relative !important;
-        top: 0 !important;
-        right: 0 !important;
-        text-align: center !important;
-        margin-top: 15px !important;
-      }
-
-      .top-exprience p {
-        font-size: 35px !important;
-        line-height: 1 !important;
-      }
+<style>
+  @media (max-width: 767px) {
+    .experience img {
+      max-width: 50% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
     }
-  </style>
+
+    .history-images img {
+      max-width: 100% !important;
+      width: 100% !important;
+      display: block !important;
+    }
+
+    .top-exprience {
+      position: relative !important;
+      top: 0 !important;
+      right: 0 !important;
+      text-align: center !important;
+      margin-top: 15px !important;
+    }
+
+    .top-exprience p {
+      font-size: 35px !important;
+      line-height: 1 !important;
+    }
+  }
+</style>
 @push('styles')
   <link rel="stylesheet" href="{{ asset('asset/css/about/about.css') }}">
 @endpush
 @section('content')
   @include('frontend.layout.nav')
-  <section class="about-page-top" style="@if($about->banner_image) background-image: url('{{ asset('uploads/aboutUs/' . $about->banner_image) }}'); background-position: center; @endif">
+  <section class="about-page-top"
+    style="@if($about->banner_image) background-image: url('{{ asset('uploads/aboutUs/' . $about->banner_image) }}'); background-position: center; @endif">
     <div class="overlay">
       <div class="container pt-5 d-flex align-items-end">
         <p><span>A</span>bout Us</p>
@@ -51,8 +52,8 @@
           Your browser does not support the video tag.
         </video>
       </div>
-      <div class="col-12 about-right brand-text-color ps-3">
-        <div style="text-align: justify; line-height: 1.8;">
+      <div class="col-12 brand-text-color ps-3">
+        <div style="text-align: justify; line-height: 1.8; color: #555;">
           {!!$about->about_us_text!!}
         </div>
       </div>
@@ -87,11 +88,11 @@
             <p>Years <br />experience</p>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 mission-visition text-end">
-          <h5>Our Vision and Mission</h5>
-          <p>
+        <div class="col-sm-12 col-md-6 mission-visition text-start">
+          <h5 style="font-weight: 700; color: #0d392e; margin-bottom: 20px;">Our Vision and Mission</h5>
+          <div style="text-align: justify; line-height: 1.8; color: #555;">
             {!! $mission->mission_text !!}
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -115,11 +116,11 @@
             <img class="img-fluid shadow rounded mb-4" src="{{ asset('uploads/history/' . $img) }}" alt="History" />
           @endforeach
         </div>
-        <div class="col-sm-12 col-md-6 history text-end">
-          <h5 class="my-3">Our History</h5>
-          <p>
+        <div class="col-sm-12 col-md-6 history text-start">
+          <h5 style="font-weight: 700; color: #0d392e; margin-bottom: 20px;">Our History</h5>
+          <div style="text-align: justify; line-height: 1.8; color: #555;">
             {!! $history->history_text !!}
-          </p>
+          </div>
         </div>
       </div>
     </div>
