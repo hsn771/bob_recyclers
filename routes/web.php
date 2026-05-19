@@ -35,6 +35,7 @@ use App\Http\Controllers\PageController as page;
 use App\Http\Controllers\CareerController as career;
 use App\Http\Controllers\CircularController as circular;
 use App\Http\Controllers\HomeController as home;
+use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\Admin\BlogController as blog;
 
 /*
@@ -70,6 +71,7 @@ Route::get('sister', [home::class, 'sister'])->name('sister');
 Route::get('management', [home::class, 'management'])->name('management');
 Route::get('about', [home::class, 'about'])->name('about');
 Route::get('chairman', [home::class, 'chairman'])->name('chairman');
+Route::get('certifications', [home::class, 'certifications'])->name('certifications');
 Route::get('trackRecord', [home::class, 'trackRecord'])->name('trackRecord');
 Route::get('overview', [home::class, 'overview'])->name('overview');
 Route::get('/yard', [home::class, 'moderation'])->name('yard');
@@ -99,6 +101,10 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('sister-concern', sister::class);
     Route::resource('mission', mission::class);
     Route::resource('chairman', chairman::class);
+    Route::get('certification/settings', [CertificationController::class, 'settings'])->name('certification.settings');
+    Route::post('certification/settings', [CertificationController::class, 'updateSettings'])->name('certification.settings.update');
+    Route::get('certification/toggle/{id}', [CertificationController::class, 'toggleStatus'])->name('certification.toggle');
+    Route::resource('certification', CertificationController::class)->except(['show']);
     Route::resource('moderation', moderation::class);
     Route::resource('carousel', carousel::class);
     Route::resource('info', company::class);

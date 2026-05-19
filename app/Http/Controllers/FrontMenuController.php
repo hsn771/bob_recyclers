@@ -34,6 +34,11 @@ class FrontMenuController extends Controller
         // dd($request->all());
         // die();
         try{
+            $request->validate([
+                'name' => 'required|string|max:500',
+                'href' => 'required|string|max:500',
+            ]);
+
             if($request->id)
                 $data=FrontMenu::find($request->id);
             else

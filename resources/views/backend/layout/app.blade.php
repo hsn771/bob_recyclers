@@ -140,6 +140,9 @@
                                 <li class="submenu-item ">
                                     <a href="{{route('chairman.index')}}">Chairman-message</a>
                                 </li>
+                                <li class="submenu-item ">
+                                    <a href="{{route('certification.index')}}">Certifications</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sidebar-item  has-sub">

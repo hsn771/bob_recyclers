@@ -11,7 +11,9 @@ class FrontMenu extends Model
     
      public function children()
     {
-        return $this->hasMany(FrontMenu::class, 'parent_id', 'id');
+        return $this->hasMany(FrontMenu::class, 'parent_id', 'id')
+            ->where('status', 1)
+            ->orderBy('rank');
     }
 
     public function hasChildren()

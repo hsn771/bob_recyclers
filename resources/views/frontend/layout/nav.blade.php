@@ -208,11 +208,11 @@
           </li>--}}
           <li class="nav-item">
             <a class="nav-link"
-              href="{{ $menu->href == "#" ? 'javascript:void(0)' : url($menu->href) }}">{{ $menu->name }}</a>
+              href="{{ empty($menu->href) || $menu->href == '#' ? 'javascript:void(0)' : url($menu->href) }}">{{ $menu->name }}</a>
             @if($menu->hasChildren())
               <ul class="sub-nav">
                 @foreach($menu->children as $child)
-                  <li><a href="{{ url($child->href) }}">{{ $child->name }}</a></li>
+                  <li><a href="{{ empty($child->href) || $child->href == '#' ? 'javascript:void(0)' : url($child->href) }}">{{ $child->name }}</a></li>
                 @endforeach
               </ul>
             @endif
@@ -310,11 +310,11 @@
       @foreach($menus as $menu)
         <li class="nav-item">
           <a class="nav-link" style="color: #fff !important; font-weight: 500;"
-            href="{{ $menu->href == "#" ? 'javascript:void(0)' : url($menu->href) }}">{{ $menu->name }}</a>
+            href="{{ empty($menu->href) || $menu->href == '#' ? 'javascript:void(0)' : url($menu->href) }}">{{ $menu->name }}</a>
           @if($menu->hasChildren())
             <ul class="sub-nav" style="background-color: rgba(0,0,0,0.15); border-left: 3px solid #fff;">
               @foreach($menu->children as $child)
-                <li><a href="{{ url($child->href) }}" style="color: #fff !important;">{{ $child->name }}</a></li>
+                <li><a href="{{ empty($child->href) || $child->href == '#' ? 'javascript:void(0)' : url($child->href) }}" style="color: #fff !important;">{{ $child->name }}</a></li>
               @endforeach
             </ul>
           @endif

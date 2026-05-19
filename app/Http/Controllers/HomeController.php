@@ -19,6 +19,8 @@ use App\Models\TrackSection;
 use App\Models\SisterLogo;
 use App\Models\CompanyInfo;
 use App\Models\Chairman;
+use App\Models\Certification;
+use App\Models\CertificationSetting;
 use App\Models\Overview;
 use App\Models\Moderation;
 use App\Models\Management;
@@ -118,6 +120,15 @@ class HomeController extends Controller
         $info = CompanyInfo::first();
         $chairman = Chairman::first();
         return view('frontend.chairman.chairman', compact('chairman','info','sister'));
+    }
+
+    public function certifications()
+    {
+        $sister = SisterLogo::all();
+        $info = CompanyInfo::first();
+        $certificates = Certification::where('status', 1)->orderBy('rank')->orderBy('id')->get();
+        $settings = CertificationSetting::first();
+        return view('frontend.certifications.index', compact('info', 'sister', 'certificates', 'settings'));
     }
 
      public function about()

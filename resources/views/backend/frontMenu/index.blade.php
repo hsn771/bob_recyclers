@@ -54,6 +54,7 @@
         'Contact Us' => 'contact',
         'Career' => 'career',
         'Chairman Message' => 'chairman',
+        'Certifications' => 'certifications',
     );
                                             ?>
 
@@ -90,7 +91,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Menu Link</label>
-                                                                <select class="form-control" name="href">
+                                                                <select class="form-control" name="href" required>
                                                                     <option value=''>Select Menu</option>
                                                                     <?php if ($menu_lnk) {
         foreach ($menu_lnk as $k => $v) { ?>
@@ -122,7 +123,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Menu Link</label>
-                                                                <select class="form-control" name="href">
+                                                                <select class="form-control" name="href" required>
                                                                     <option value=''>Select Page</option>
                                                                     <?php if ($pages) {
         foreach ($pages as $mp) { ?>
