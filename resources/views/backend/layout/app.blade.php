@@ -15,8 +15,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <style>
-        .tox.tox-silver-sink.tox-tinymce-aux {
-            display: none;
+        .tox-tinymce {
+            position: relative;
+            z-index: 20;
+        }
+
+        .tox.tox-tinymce-aux {
+            z-index: 1050 !important;
         }
     </style>
     @stack('styles')
@@ -206,6 +211,11 @@
                                 <li class="submenu-item  ">
                                     <a href="{{route('project.index')}}">
                                         File Upload
+                                    </a>
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="{{ route('track-section.index') }}">
+                                        Track Sections
                                     </a>
                                 </li>
                                 <li class="submenu-item  ">

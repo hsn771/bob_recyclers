@@ -60,8 +60,20 @@
 
         /* Firefox */
         html {
+            overflow-y: scroll;
+            scrollbar-gutter: stable;
             scrollbar-width: thin;
             scrollbar-color: #4a9e70 #1a2e25;
+        }
+
+        /* Keep main scrollbar visible when Bootstrap modal is open */
+        html:has(body.modal-open) {
+            overflow-y: scroll !important;
+        }
+
+        body.modal-open {
+            overflow: hidden !important;
+            padding-right: 0 !important;
         }
 
         .go-to-top {
@@ -144,6 +156,7 @@
     <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
+    @stack('modals')
     @stack('scripts')
 </body>
 

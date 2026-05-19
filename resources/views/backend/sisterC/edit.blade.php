@@ -4,12 +4,12 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Sister Concern</h3>
+                <h3>Sister Concern Page</h3>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Sister Concern</li>
                     </ol>
                 </nav>
@@ -19,59 +19,67 @@
     <div class="page-content">
         <section class="section">
             <div class="card">
-                {{--<div class="card-header">
-                    <h4 class="card-title">Moderation Page</h4>
-                </div>--}}
+                <div class="card-header">
+                    <h4 class="card-title">Mahinur Ship Recycling Limited (MSRL)</h4>
+                </div>
                 <div class="card-body">
-                    <form action="{{ route('sisterC.update', encryptor('encrypt',$data->id)) }}" method="POST">
+                    <form action="{{ route('sisterC.update', encryptor('encrypt', $data->id)) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                          <div class="row">
-                            <div class="col-12 mb-4">
-                            <label for="about_us">About Us</label>
-                            <textarea name="about_us" cols="30" rows="8" id="about_us" class="form-control">{{old('about_us',$data->about_us)}}</textarea>
+                        <div class="col-12 mb-4">
+                            <label for="about_us">About MSRL</label>
+                            <textarea name="about_us" cols="30" rows="8" id="about_us" class="form-control">{{ old('about_us', $data->about_us) }}</textarea>
+                            @if ($errors->has('about_us'))
+                                <span class="text-danger">{{ $errors->first('about_us') }}</span>
+                            @endif
                         </div>
-                         <div class="col-12 mb-4">
-                            <label for="history">History</label>
-                            <textarea name="history" cols="30" rows="8" id="history" class="form-control">{{old('history',$data->history)}}</textarea>
-                         </div>
-                         <div class="col-12 mb-4">
-                            <label for="mission">Mission</label>
-                            <textarea name="mission" id="mission" cols="30" rows="8">{{old('mission',$data->mission)}}</textarea>
-                         </div>
-                         <div class="col-12">
-                            <label for="sister_text">Sister Text</label>
-                            <textarea name="sister_text" id="sister_text" cols="30" rows="8">{{old('sister_text',$data->sister_text)}}</textarea>
-                         </div>
-                        <div class="col-md-6 mt-2 ms-2">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="row">
+                            <div class="col-md-4 mt-3">
+                                <label for="banner_image">Banner Image (hero)</label>
+                                <input type="file" id="banner_image" class="form-control" name="banner_image" accept="image/*">
+                                @if ($data->banner_image)
+                                    <img src="{{ asset('uploads/sisterConcern/' . $data->banner_image) }}" alt="Banner" width="120" class="mt-2 rounded shadow-sm">
+                                @endif
+                                @if ($errors->has('banner_image'))
+                                    <span class="text-danger">{{ $errors->first('banner_image') }}</span>
+                                @endif
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <label for="image_1">Photo 1</label>
+                                <input type="file" id="image_1" class="form-control" name="image_1" accept="image/*">
+                                @if ($data->image_1)
+                                    <img src="{{ asset('uploads/sisterConcern/' . $data->image_1) }}" alt="Photo 1" width="120" class="mt-2 rounded shadow-sm">
+                                @endif
+                                @if ($errors->has('image_1'))
+                                    <span class="text-danger">{{ $errors->first('image_1') }}</span>
+                                @endif
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <label for="image_2">Photo 2</label>
+                                <input type="file" id="image_2" class="form-control" name="image_2" accept="image/*">
+                                @if ($data->image_2)
+                                    <img src="{{ asset('uploads/sisterConcern/' . $data->image_2) }}" alt="Photo 2" width="120" class="mt-2 rounded shadow-sm">
+                                @endif
+                                @if ($errors->has('image_2'))
+                                    <span class="text-danger">{{ $errors->first('image_2') }}</span>
+                                @endif
+                            </div>
                         </div>
-                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </form>
                 </div>
-
             </div>
         </section>
     </div>
 </div>
 @endsection
 @push('scripts')
- <!-- Place the first <script> tag in your HTML's <head> -->
-<script src="{{asset('assets/tinymc.js')}}"></script>
-
-<!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+<script src="{{ asset('assets/tinymc.js') }}"></script>
 <script>
   tinymce.init({
-    selector: 'textarea',
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-    tinycomments_mode: 'embedded',
-    tinycomments_author: 'Author name',
-    mergetags_list: [
-      { value: 'First.Name', title: 'First Name' },
-      { value: 'Email', title: 'Email' },
-    ],
-    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+    selector: '#about_us',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist | removeformat',
   });
 </script>
 @endpush

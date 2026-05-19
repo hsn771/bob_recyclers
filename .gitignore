@@ -1,6 +1,11 @@
 /node_modules
 /public/hot
 /public/storage
+
+# Large media — host on server only, do not commit to Git
+/public/uploads/carousel/Movei.mp4
+/public/uploads/carousel/movei.mp4
+/public/media/MT RADE BEACHING.mp4
 /storage/*.key
 /vendor
 .env

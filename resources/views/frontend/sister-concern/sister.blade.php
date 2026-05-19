@@ -1,100 +1,46 @@
 @extends('frontend.layout.app')
-@section('title', 'Sister Concern - BOB Recyclers | MSRL Chittagong')
-@section('description', 'BOB Recyclers is the sister concern of Mahinur Ship Recycling Limited (MSRL). Both companies specialize in green ship recycling in Sitakunda, Chittagong, Bangladesh.')
-@include('frontend.layout.nav')
-  <section class="container my-5">
-        <div class="row">
-          <div class="col-md-12 col-lg-6 mb-3">
-            <img
-              class="img-fluid rounded-4 shadow"
-              src="{{asset('asset/images/office.jpg')}}"
-              alt="Office Desk"
-            />
-          </div>
-          <div class="col-md-12 col-lg-6 about-right brand-text-color ps-3">
-            <h4 class="pt-3 pb-3">About Us</h4>
-            <p>
-              {!! $sis->about_us !!}
-            </p>
-            <a href="{{route('sister')}}" class="btn btn-green m-1 border rounded-pill px-4"
-              >Read More</a
-            >
-          </div>
-        </div>
+@section('title', 'Sister Concern - Mahinur Ship Recycling Limited | MSRL')
+@section('description', 'Mahinur Ship Recycling Limited (MSRL) is the sister concern of BOB Recyclers. Both specialize in green ship recycling in Sitakunda, Chittagong, Bangladesh.')
+@push('styles')
+  <link rel="stylesheet" href="{{ asset('asset/css/about/about.css') }}">
+@endpush
+@section('content')
+  @include('frontend.layout.nav')
+
+  <section class="about-page-top"
+    style="@if($sis && $sis->banner_image) background-image: url('{{ asset('uploads/sisterConcern/' . $sis->banner_image) }}'); background-position: center; @endif">
+    <div class="overlay">
+      <div class="container pt-5 d-flex align-items-end">
+        <p><span>S</span>ister Concern</p>
+      </div>
+    </div>
   </section>
-    <!-- About end -->
-    <!-- Buyers Start -->
-{{--<section class="container py-5 brand-text-color">
-  <div class="row">
-    <div class="col-md-12 col-lg-6 buyers mb-4">
-      <h3>Our Sister Concern</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-        non iaculis est, ac feugiat dui. Nunc sodales rutrum felis ac
-        feugiat. Nullam sed commodo arcu. Quisque vel arcu leo.
-      </p>
-    </div>
-    <div class="col-md-12 col-lg-6 sister-logo-about text-center">
-      <img class="img-fluid" src="{{asset('asset/images/logo.png')}}" alt="Sister Logo" />
-    </div>
-  </div>
-</section>--}}
-    <!-- Buyers end -->
-    <!-- Years Section start -->
-    <section class="year brand-text-color">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6 experience">
-            <img class="img-fluid" src="{{asset('asset/images/17.png')}}" alt="Years" />
-            <div class="top-exprience">
-              <p>Years <br />experience</p>
-            </div>
+
+  <section class="container my-5 brand-text-color">
+    <h3 class="mb-4" style="font-weight: 700; color: #0d392e;">About MSRL</h3>
+    @if($sis && $sis->about_us)
+      <div style="text-align: justify; line-height: 1.8; color: #555;">
+        {!! $sis->about_us !!}
+      </div>
+    @endif
+  </section>
+
+  @if($sis && ($sis->image_1 || $sis->image_2))
+    <section class="container mb-5">
+      <div class="row g-4">
+        @if($sis->image_1)
+          <div class="col-md-6">
+            <img class="img-fluid rounded-4 shadow w-100" src="{{ asset('uploads/sisterConcern/' . $sis->image_1) }}" alt="MSRL">
           </div>
-          <div class="col-sm-12 col-md-6 mission-visition text-end">
-            <h5>Our Vision and Mission</h5>
-            <p>
-              {!! $sis->mission !!}
-            </p>
+        @endif
+        @if($sis->image_2)
+          <div class="col-md-6">
+            <img class="img-fluid rounded-4 shadow w-100" src="{{ asset('uploads/sisterConcern/' . $sis->image_2) }}" alt="MSRL">
           </div>
-        </div>
+        @endif
       </div>
     </section>
-    <!-- Years Section end -->
-    <!-- counter start -->
-    @include('frontend.track-cards.card')
-    <!-- counter end -->
-    <!-- history start -->
-    <section class="year brand-text-color my-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6 experience d-flex align-items-center">
-            <img
-              class="img-fluid shadow rounded"
-              src="{{asset('asset/images/history.png')}}"
-              alt=""
-            />
-          </div>
-          <div class="col-sm-12 col-md-6 history text-end">
-            <h5 class="my-3">Our History</h5>
-            <p>
-             {!! $sis->history !!} 
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- history end -->
-    <!-- Buyers Start -->
-    @include('frontend.our-buyers.buyer')
-    <!-- Buyers end -->
-    <!-- main text -->
-   <section class="container">
-      <div class="my-4">
-        <div class="page-inner-body my-4">
-            <p>{!! $text->about_text !!}</p>
-        </div>
-      </div>
-    </section>
-    
-@include('frontend.layout.footer')
-@endsection('content')
+  @endif
+
+  @include('frontend.layout.footer')
+@endsection

@@ -21,6 +21,8 @@ use App\Http\Controllers\OverviewController as overview;
 use App\Http\Controllers\SisterConcernController as sister;
 use App\Http\Controllers\CarouselController as carousel;
 use App\Http\Controllers\TrackRecordController as track;
+use App\Http\Controllers\TrackSectionController;
+use App\Http\Controllers\TrackSectionItemController;
 use App\Http\Controllers\BuyerLogoController as buyer;
 use App\Http\Controllers\SisterLogoController as sisterLogo;
 use App\Http\Controllers\CompanyInfoController as company;
@@ -103,6 +105,9 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('sister-logo', sisterLogo::class);
     Route::resource('buyer-logo', buyer::class);
     Route::resource('track-record', track::class);
+    Route::get('track-section', [TrackSectionController::class, 'index'])->name('track-section.index');
+    Route::put('track-section/{id}', [TrackSectionController::class, 'update'])->name('track-section.update');
+    Route::resource('track-section-item', TrackSectionItemController::class)->except(['index', 'show']);
     Route::resource('history', history::class);
     Route::get('history/delete-image/{id}/{img}', [history::class, 'deleteImage'])->name('history.deleteImage');
     Route::resource('about-us', aboutUs::class);

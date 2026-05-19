@@ -2,37 +2,36 @@
 @section('title', 'About MSRL - Mahinur Ship Recycling Limited | Chittagong')
 @section('description', 'Learn about Mahinur Ship Recycling Limited (MSRL) - A leading green ship recycling company in Sitakunda, Chittagong, Bangladesh. Established in 2016.')
 @push('styles')
-<style>
-  @media (max-width: 767px) {
-    .experience img {
-      max-width: 50% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      display: block !important;
-    }
-
-    .history-images img {
-      max-width: 100% !important;
-      width: 100% !important;
-      display: block !important;
-    }
-
-    .top-exprience {
-      position: relative !important;
-      top: 0 !important;
-      right: 0 !important;
-      text-align: center !important;
-      margin-top: 15px !important;
-    }
-
-    .top-exprience p {
-      font-size: 35px !important;
-      line-height: 1 !important;
-    }
-  }
-</style>
-@push('styles')
   <link rel="stylesheet" href="{{ asset('asset/css/about/about.css') }}">
+  <style>
+    @media (max-width: 767px) {
+      .experience img {
+        max-width: 50% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
+
+      .history-images img {
+        max-width: 100% !important;
+        width: 100% !important;
+        display: block !important;
+      }
+
+      .top-exprience {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        text-align: center !important;
+        margin-top: 15px !important;
+      }
+
+      .top-exprience p {
+        font-size: 35px !important;
+        line-height: 1 !important;
+      }
+    }
+  </style>
 @endpush
 @section('content')
   @include('frontend.layout.nav')
@@ -48,7 +47,7 @@
     <div class="row">
       <div class="col-12 mb-4">
         <video width="100%" height="auto" style="max-height: 600px; display: block; margin: 0 auto;" controls>
-          <source src="{{ asset('media/about_video.mp4') }}" type="video/mp4">
+          <source src="{{ asset('media/MT RADE BEACHING.mp4') }}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>

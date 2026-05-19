@@ -15,6 +15,7 @@ use App\Models\Mission;
 use App\Models\History;
 use App\Models\BuyerLogo;
 use App\Models\TrackRecord;
+use App\Models\TrackSection;
 use App\Models\SisterLogo;
 use App\Models\CompanyInfo;
 use App\Models\Chairman;
@@ -65,14 +66,10 @@ class HomeController extends Controller
 
     public function sister()
     {
-        $text= Text::first();
-        $sis=Sister::first();
-        $buyerLogos= BuyerLogo::all();
-        $card = TrackRecord::first();
-        $sisC= SisterConcern::all();
+        $sis = Sister::first();
         $info = CompanyInfo::first();
         $sister = SisterLogo::all();
-        return view('frontend.sister-concern.sister', compact('info','sister','sisC','card','buyerLogos','sis','text'));
+        return view('frontend.sister-concern.sister', compact('info', 'sister', 'sis'));
     }
 
     public function management()
@@ -89,11 +86,14 @@ class HomeController extends Controller
 
     public function trackRecord()
     {
-        $projects= Project::paginate(15);
-        $sister= SisterLogo::all();
+        TrackSection::firstOrCreate(['position' => 1], ['title' => 'Upcoming Project']);
+        TrackSection::firstOrCreate(['position' => 2], ['title' => 'Recent Project']);
+
+        $trackSections = TrackSection::with('items')->orderBy('position')->get();
+        $sister = SisterLogo::all();
         $info = CompanyInfo::first();
-        $card= TrackRecord::first();
-        return view('frontend.track-record.track', compact('card','info','sister','projects'));
+        $card = TrackRecord::first();
+        return view('frontend.track-record.track', compact('card', 'info', 'sister', 'trackSections'));
     }
 
      public function overview()
