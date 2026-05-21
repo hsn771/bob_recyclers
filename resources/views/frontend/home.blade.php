@@ -66,7 +66,7 @@
     <div class="video-slider">
 
       <video autoplay muted loop playsinline>
-        <source src="{{ asset('uploads/carousel/Movei.mp4') }}" type="video/mp4">
+        <source src="{{ asset('uploads/carousel/movei.mp4') }}" type="video/mp4">
       </video>
 
       <div class="video-overlay">
