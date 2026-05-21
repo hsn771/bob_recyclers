@@ -21,11 +21,16 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
                         <h5 class="card-title mb-0">All Blogs</h5>
-                        <a href="{{ route('admin.blog.create') }}" class="btn btn-primary btn-sm">
-                            <i class="bi bi-plus-circle me-1"></i> Add New Blog
-                        </a>
+                        <div class="d-flex gap-2">
+                            <a href="{{ route('admin.blog.settings') }}" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-image me-1"></i> Page Banner
+                            </a>
+                            <a href="{{ route('admin.blog.create') }}" class="btn btn-primary btn-sm">
+                                <i class="bi bi-plus-circle me-1"></i> Add New Blog
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

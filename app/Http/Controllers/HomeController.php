@@ -32,6 +32,7 @@ use App\Models\Project;
 use App\Models\FrontMenu;
 use App\Models\SisterConcern;
 use App\Models\Blog;
+use App\Models\BlogSetting;
 use Exception;
 use Toastr;
 
@@ -180,7 +181,8 @@ class HomeController extends Controller
         $info = CompanyInfo::first();
         $sister = SisterLogo::all();
         $blogs = Blog::where('status', 1)->latest('published_at')->paginate(9);
-        return view('frontend.blog.index', compact('info', 'sister', 'blogs'));
+        $blogSettings = BlogSetting::first();
+        return view('frontend.blog.index', compact('info', 'sister', 'blogs', 'blogSettings'));
     }
 
     public function blogShow($slug)
@@ -188,7 +190,8 @@ class HomeController extends Controller
         $info = CompanyInfo::first();
         $sister = SisterLogo::all();
         $blog = Blog::where('slug', $slug)->where('status', 1)->firstOrFail();
-        return view('frontend.blog.show', compact('info', 'sister', 'blog'));
+        $blogSettings = BlogSetting::first();
+        return view('frontend.blog.show', compact('info', 'sister', 'blog', 'blogSettings'));
     }
 
 }

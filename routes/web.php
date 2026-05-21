@@ -123,6 +123,8 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('project', project::class);
     Route::resource('circular', circular::class);
     Route::resource('video', video::class);
+    Route::get('admin/blog/settings', [blog::class, 'settings'])->name('admin.blog.settings');
+    Route::post('admin/blog/settings', [blog::class, 'updateSettings'])->name('admin.blog.settings.update');
     Route::resource('admin/blog', blog::class, ['as' => 'admin']);
     
     Route::delete('applicants/{id}', [career::class, 'destroy'])->name('applicants.destroy');

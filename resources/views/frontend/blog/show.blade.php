@@ -1,21 +1,17 @@
 @extends('frontend.layout.app')
 @section('title', $blog->title . ' | MSRL Blog - Green Ship Recycling Bangladesh')
 @section('description', $blog->short_description ?? 'Read the latest blog post from Mahinur Ship Recycling Limited (MSRL). Green ship recycling news and updates from Chittagong, Bangladesh.')
+
+@push('styles')
+  <link rel="stylesheet" href="{{ asset('asset/css/about/about.css') }}">
+@endpush
+
 @section('content')
     @include('frontend.layout.nav')
 
+    @include('frontend.blog.partials.page-top')
+
     <style>
-        .blog-hero {
-            background: linear-gradient(135deg, #1a4731, #2d6a4f);
-            padding: 70px 0 50px;
-            color: #fff;
-        }
-
-        .blog-hero h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-        }
-
         .blog-detail-img {
             width: 100%;
             max-height: 480px;
@@ -97,17 +93,6 @@
             color: #fff;
         }
     </style>
-
-    <!-- Hero -->
-    <section class="blog-hero">
-        <div class="container">
-            <h1>{{ $blog->title }}</h1>
-            <p class="opacity-75 mb-0">
-                @if($blog->category){{ $blog->category }} · @endif
-                {{ $blog->published_at ? $blog->published_at->format('d M Y') : $blog->created_at->format('d M Y') }}
-            </p>
-        </div>
-    </section>
 
     <!-- Blog Detail -->
     <section class="container py-5">

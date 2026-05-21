@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Blog\SettingsRequest;
 use App\Models\Blog;
+use App\Models\BlogSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Exception;
@@ -109,6 +111,38 @@ class BlogController extends Controller
         } catch (Exception $e) {
             $this->notice->warning('Something went wrong! Please try again.');
             return back();
+        }
+    }
+
+    public function settings()
+    {
+        $settings = BlogSetting::firstOrCreate(['page_title' => 'Blog']);
+        return view('backend.blog.settings', compact('settings'));
+    }
+
+    public function updateSettings(SettingsRequest $request)
+    {
+        try {
+            $settings = BlogSetting::firstOrCreate(['page_title' => 'Blog']);
+
+            if ($request->hasFile('banner_image')) {
+                $oldBanner = public_path('uploads/blog-page/' . $settings->banner_image);
+                if ($settings->banner_image && file_exists($oldBanner)) {
+                    @unlink($oldBanner);
+                }
+                $imageName = time() . '_' . uniqid() . '.' . $request->banner_image->extension();
+                $request->banner_image->move(public_path('uploads/blog-page'), $imageName);
+                $settings->banner_image = $imageName;
+            }
+
+            $settings->page_title = $request->page_title;
+            $settings->save();
+
+            $this->notice->success('Blog page settings updated successfully!');
+            return redirect()->route('admin.blog.index');
+        } catch (Exception $e) {
+            $this->notice->warning('Something went wrong! Please try again.');
+            return back()->withInput();
         }
     }
 }

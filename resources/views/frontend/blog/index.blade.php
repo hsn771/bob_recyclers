@@ -1,20 +1,17 @@
 @extends('frontend.layout.app')
 @section('title', 'Blog - Latest News & Updates | MSRL Green Ship Recycling')
 @section('description', 'Read the latest news, updates and insights from Mahinur Ship Recycling Limited (MSRL) and Bay of Bengal Recyclers. Green ship recycling in Chittagong, Bangladesh.')
+
+@push('styles')
+  <link rel="stylesheet" href="{{ asset('asset/css/about/about.css') }}">
+@endpush
+
 @section('content')
 @include('frontend.layout.nav')
 
+@include('frontend.blog.partials.page-top')
+
 <style>
-    .blog-hero {
-        background: linear-gradient(135deg, #1a4731, #2d6a4f);
-        padding: 70px 0 50px;
-        color: #fff;
-    }
-    .blog-hero h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
     .blog-card {
         border: none;
         border-radius: 12px;
@@ -87,14 +84,6 @@
         margin-bottom: 16px;
     }
 </style>
-
-<!-- Hero -->
-<section class="blog-hero">
-    <div class="container">
-        <h1 class="mb-2"><span>B</span>logs</h1>
-        <p class="mb-0 opacity-75">Latest news, updates, and insights from Bay of Bengal Recyclers</p>
-    </div>
-</section>
 
 <!-- Blog Posts -->
 <section class="container py-5">
